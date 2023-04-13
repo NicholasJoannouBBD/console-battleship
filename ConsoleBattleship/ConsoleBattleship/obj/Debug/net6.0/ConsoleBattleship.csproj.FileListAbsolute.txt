@@ -1,0 +1,15 @@
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.exe
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.deps.json
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.runtimeconfig.json
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.dll
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.pdb
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.AssemblyReference.cache
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfoInputs.cache
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfo.cs
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CoreCompileInputs.cache
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.dll
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\refint\ConsoleBattleship.dll
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.pdb
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.genruntimeconfig.cache
+D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ref\ConsoleBattleship.dll
