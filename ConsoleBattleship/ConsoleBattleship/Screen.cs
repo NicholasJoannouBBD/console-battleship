@@ -23,14 +23,14 @@ namespace ConsoleBattleship
     private readonly int _height; //Height scales 2x as fast as width
     private readonly int _width;
     private readonly string _inputPrompt = "input: ";
-    private readonly Grid _shipGrid;
-
 
     private bool _running = true;
     private string _input = "";
     private (int, int) _cursorLocation = Console.GetCursorPosition();
     private (int, int) _crosshairLocation;
     private bool _movingCursor = false;
+    
+    public readonly Grid BattleshipGrid;
 
     public delegate void RefreshDelegate();
     public event RefreshDelegate OnRefresh = delegate { };
@@ -53,7 +53,7 @@ namespace ConsoleBattleship
 
       _crosshairLocation = (width / 2, height / 2);
 
-      _shipGrid = new Grid(width - s_padding * 2, height, s_background);
+      BattleshipGrid = new Grid(width - s_padding * 2, height, s_background);
 
       AddAllDelegates();
     }
@@ -70,6 +70,8 @@ namespace ConsoleBattleship
       OnKeyPressed += HandleAlphaNumeric;
       OnKeyPressed += HandleEscape;
       OnKeyPressed += HandleArrowKeys;
+
+      BattleshipGrid.OnChange += (int row, int column, string oldValue, string newValue) => { OnRefresh(); };
     }
 
 
@@ -113,7 +115,7 @@ namespace ConsoleBattleship
     private void RefreshGrid()
     {
       SetCursorToBegin();
-      foreach (string row in _shipGrid.GetAllRows())
+      foreach (string row in BattleshipGrid.GetAllRows())
       {
         SetCursorTo(s_padding + 1, Console.GetCursorPosition().Top + 1);
         Console.Write(row);

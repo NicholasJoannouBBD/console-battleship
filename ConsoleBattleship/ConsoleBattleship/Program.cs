@@ -5,6 +5,10 @@ Screen screen = Screen.GetScreen(80, 20);
 
 screen.Start();
 
+Thread.Sleep(1000);
+
+screen.BattleshipGrid.ReplaceChar(10, 40, "O");
+
 //screen.stop();
 // The templates have changed, in main, we no longer see the top level statements normally used, this can be a pain, but its part
 // of .NET 6 and I thought it best to go with the latest LTS support

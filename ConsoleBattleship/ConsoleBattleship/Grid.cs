@@ -5,7 +5,10 @@
     private string[][] _gridArray;
 
     private readonly int _width;
-    private readonly int _height; 
+    private readonly int _height;
+
+    public delegate void ChangeDelegate(int row, int column, string previousValue, string newValue);
+    public event ChangeDelegate OnChange = delegate { };
 
     public Grid(int width, int height, string initial) 
     { 
@@ -22,7 +25,8 @@
 
       for (int i = 0;i < _height; i++)
       {
-        _gridArray[i] = row;
+        _gridArray[i] = new string[_width];
+        row.CopyTo(_gridArray[i], 0);
       }
     }
 
@@ -31,6 +35,7 @@
     {
       string old = _gridArray[row][column];
       _gridArray[row][column] = c;
+      OnChange(row, column, old, c);
       return old;
     }
 
