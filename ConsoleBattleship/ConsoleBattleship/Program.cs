@@ -1,18 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConsoleBattleship;
 
-Screen screen = Screen.GetScreen(80, 20);
+Screen screen = Screen.GetScreen(40, 20);
 
 screen.Start();
-
-for (int i = 0; i < 100; i++)
+while (true) for (int i = 0; i < 100; i++)
 {
-  BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 10, 60, 90 * i);
+  BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 10, 10, 90 * i);
+  BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 15, 2 * i, 90 );
   Thread.Sleep(100);
-  BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 10, 60, 90 * i);
+  BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 10, 10, 90 * i);
+  BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 15 , 2 * i, 90);
+
+
+
 }
 
-screen.BattleshipGrid.ReplaceChar(10, 40, "O");
+screen.BattleshipGrid.ReplaceChar(10, 10, "O");
 
 
 //screen.stop();

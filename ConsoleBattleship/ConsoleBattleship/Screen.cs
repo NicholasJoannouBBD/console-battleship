@@ -31,6 +31,7 @@ namespace ConsoleBattleship
     private bool _movingCursor = false;
     private bool _cursorLocked = false;
     private bool _running = true;
+    private Thread _scheduledRefresh;
     
     public readonly Grid BattleshipGrid;
 
@@ -57,6 +58,11 @@ namespace ConsoleBattleship
 
       BattleshipGrid = new Grid(width - s_padding * 2, height, s_background);
 
+      _scheduledRefresh = new Thread(() =>
+      {
+        Thread.Sleep(10);
+        OnRefresh();
+      });
 
       AddAllDelegates();
     }
@@ -73,11 +79,23 @@ namespace ConsoleBattleship
       OnKeyPressed += HandleEscape;
       OnKeyPressed += HandleArrowKeys;
 
-      BattleshipGrid.OnChange += (int row, int column, string oldValue, string newValue) => { OnRefresh(); };
+      BattleshipGrid.OnChange += (int row, int column, string oldValue, string newValue) => { ScheduleRefresh(); };
     }
 
 
     // EVENT HANDLERS
+    // Battleship Grid On Change
+    private void ScheduleRefresh()
+    {
+      if (_scheduledRefresh.ThreadState == ThreadState.Running) return;
+      _scheduledRefresh = new Thread(() =>
+      {
+        Thread.Sleep(10);
+        OnRefresh();
+      });
+      _scheduledRefresh.Start();
+    }
+
     // On Refresh
     private void RefreshBorder()
     {
@@ -112,7 +130,7 @@ namespace ConsoleBattleship
     {
       GetCursor();
       SetCursorTo(s_padding, _height + 2);
-      Console.Write(_inputPrompt.Pastel(s_inputPromptColor) + _input);
+      Console.Write(_inputPrompt.Pastel(s_inputPromptColor) + _input + "  ");
       ReturnCursor();
     }
 

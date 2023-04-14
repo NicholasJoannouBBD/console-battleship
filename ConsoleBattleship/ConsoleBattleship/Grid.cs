@@ -33,13 +33,16 @@
     /// <returns>The previous character in that position</returns>
     public string ReplaceChar(int row, int column, string c)
     {
-      if (0 < row && row < _height && 0 < column && column < _width) {
-        string old = _gridArray[row][column];
-        _gridArray[row][column] = c;
-        OnChange(row, column, old, c);
-        return old;
+      // May want to note this later on
+      if (!(0 < row && row < _height && 0 < column && column < _width)) {
+        row = Math.Abs(row % _height);
+        column = Math.Abs(column % _width);
       }
-      return null;
+
+      string old = _gridArray[row][column];
+      _gridArray[row][column] = c;
+      OnChange(row, column, old, c);
+      return old;
     }
 
     public string GetChar(int row, int column)
