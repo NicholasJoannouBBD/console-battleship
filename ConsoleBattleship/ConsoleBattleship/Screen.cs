@@ -1,22 +1,36 @@
 ﻿using Pastel;
 using System.Drawing;
+using System.Text;
 
 namespace ConsoleBattleship
 {
   partial class Screen
   {
-    private static Screen Instance = new(Console.WindowWidth - (2 * Padding)-2, Console.WindowHeight - (2 * Padding)-4);
-    private static readonly int Padding = 2;
+    private static readonly Color s_backgroundColor = Color.FromArgb(0, 10, 10); // Dark Cyan
+    private static readonly Color s_backgroundCharColor = Color.FromArgb(0, 100, 100); // Cyan
+    private static readonly Color s_crosshairColor = Color.FromArgb(250, 250, 120); // Yellow
+    private static readonly Color s_borderColor = Color.FromArgb(165, 229, 250); // Blue
+    private static readonly Color s_inputPromptColor = Color.FromArgb(250, 129, 120); // Red
 
-    private readonly int Height; //Height scales 2x as fast as width
-    private readonly int Width;
-    private readonly int InitialScreenSize;
-    private readonly string InputPrompt = "input: ";
+    private static readonly int s_padding = 2;
+    private static readonly string s_background = "V".Pastel(s_backgroundCharColor).PastelBg(s_backgroundColor);
 
-    private bool running = true;
-    private string ScreenString;
-    private string Input = "";
+    private static Screen s_instance = new(
+      Console.WindowWidth - (2 * s_padding) - 2,
+      Console.WindowHeight - (2 * s_padding) - 4
+    );
 
+    private readonly int _height; //Height scales 2x as fast as width
+    private readonly int _width;
+    private readonly string _inputPrompt = "input: ";
+    private readonly Grid _shipGrid;
+
+
+    private bool _running = true;
+    private string _input = "";
+    private (int, int) _cursorLocation = Console.GetCursorPosition();
+    private (int, int) _crosshairLocation;
+    private bool _movingCursor = false;
 
     public delegate void RefreshDelegate();
     public event RefreshDelegate OnRefresh = delegate { };
@@ -32,65 +46,111 @@ namespace ConsoleBattleship
     private Screen(int width, int height)
     {
       Console.CursorVisible = false;
+      Console.OutputEncoding = new UnicodeEncoding();
 
-      this.Width = width;
-      this.Height = height;
+      _width = width;
+      _height = height;
 
-      this.ScreenString = CreateScreenString();
-      this.InitialScreenSize = ScreenString.Length;
+      _crosshairLocation = (width / 2, height / 2);
+
+      _shipGrid = new Grid(width - s_padding * 2, height, s_background);
 
       AddAllDelegates();
     }
 
-    private string CreateScreenString()
-    {
-      String Top    = new String(' ', Padding) 
-        + "┌".Pastel(Color.FromArgb(165, 229, 250)) 
-        + new String('─', Width).Pastel(Color.FromArgb(165, 229, 250)) 
-        + "┐\n".Pastel(Color.FromArgb(165, 229, 250));
-
-      String Middle = new String(' ', Padding) 
-        + "│".Pastel(Color.FromArgb(165, 229, 250)) 
-        + new String(' ', Width) 
-        + "│\n".Pastel(Color.FromArgb(165, 229, 250));
-
-      String Bottom = new String(' ', Padding) 
-        + "└".Pastel(Color.FromArgb(165, 229, 250)) 
-        + new String('─', Width).Pastel(Color.FromArgb(165, 229, 250)) 
-        + "┘\n".Pastel(Color.FromArgb(165, 229, 250));
-
-      return Top + string.Concat(Enumerable.Repeat(Middle, Height)) + Bottom + InputPrompt.Pastel(Color.FromArgb(250, 129, 120));
-    }
-
     private void AddAllDelegates()
     {
-      OnRefresh += RefreshScreen;
+      OnRefresh += RefreshBorder;
+      OnRefresh += RefreshGrid;
+      OnRefresh += RefreshInput;
+      OnRefresh += RefreshCrosshair;
 
       OnKeyPressed += HandleBackspace;
       OnKeyPressed += HandleEnter;
       OnKeyPressed += HandleAlphaNumeric;
       OnKeyPressed += HandleEscape;
+      OnKeyPressed += HandleArrowKeys;
     }
 
 
     // EVENT HANDLERS
-      // On Refresh
-    private void RefreshScreen()
+    // On Refresh
+    private void RefreshBorder()
     {
-      Console.SetCursorPosition(0, 0);
-      Console.Write(ScreenString);
+      SetCursorToBegin();
+      string Top = new string(' ', s_padding)
+        + "┌".Pastel(s_borderColor).PastelBg(s_backgroundColor)
+        + new string('─', _width - s_padding * 2).Pastel(s_borderColor).PastelBg(s_backgroundColor)
+        + "┐".Pastel(s_borderColor).PastelBg(s_backgroundColor);
+
+      Console.Write(Top);
+      for (int i = 0; i < _height; i++)
+      {
+        SetCursorTo(s_padding, Console.GetCursorPosition().Top + 1);
+        Console.Write("│".Pastel(s_borderColor).PastelBg(s_backgroundColor));
+        SetCursorTo(_width - s_padding + 1, Console.GetCursorPosition().Top);
+        Console.Write("│".Pastel(s_borderColor).PastelBg(s_backgroundColor));
+      }
+
+      SetCursorTo(0, Console.GetCursorPosition().Top + 1);
+
+      string Bottom = new string(' ', s_padding)
+        + "└".Pastel(s_borderColor).PastelBg(s_backgroundColor)
+        + new string('─', _width - (s_padding * 2)).Pastel(s_borderColor).PastelBg(s_backgroundColor)
+        + "┘".Pastel(s_borderColor).PastelBg(s_backgroundColor);
+      Console.Write(Bottom);
+
+      ReturnCursor();
     }
 
-      // On Key Pressed
+    private void RefreshInput()
+    {
+      SetCursorTo(s_padding, _height + 2);
+      Console.Write(_inputPrompt.Pastel(s_inputPromptColor) + _input);
+      ReturnCursor();
+    }
+
+    private void RefreshGrid()
+    {
+      SetCursorToBegin();
+      foreach (string row in _shipGrid.GetAllRows())
+      {
+        SetCursorTo(s_padding + 1, Console.GetCursorPosition().Top + 1);
+        Console.Write(row);
+      }
+      ReturnCursor();
+    }
+
+    private void RefreshCrosshair()
+    {
+      SetCursorTo(_crosshairLocation.Item1, _crosshairLocation.Item2);
+      Console.Write("┼".Pastel(s_crosshairColor).PastelBg(s_backgroundColor));
+
+      // Bigger Crosshair
+      /*SetCursorTo(CrosshairLocation.Item1, CrosshairLocation.Item2);
+      Console.Write("╿".Pastel(CrosshairColor));
+      SetCursorTo(CrosshairLocation.Item1 - 2, CrosshairLocation.Item2 - 1);
+      Console.Write("─╼".Pastel(CrosshairColor));
+      SetCursorTo(CrosshairLocation.Item1 + 1, CrosshairLocation.Item2 - 1);
+      Console.Write("╾─".Pastel(CrosshairColor));
+      SetCursorTo(CrosshairLocation.Item1, CrosshairLocation.Item2 - 2);
+      Console.Write("╽".Pastel(CrosshairColor));*/
+
+      ReturnCursor();
+    }
+
+    // On Key Pressed
     private void HandleBackspace(ConsoleKeyInfo key)
     {
       if (key.Key == ConsoleKey.Backspace)
       {
-        if (Input.Length != 0)
+        if (_input.Length != 0)
         {
+          SetCursorToEnd();
           Console.Write("\b ");
-          ScreenString = ScreenString.Remove(ScreenString.Length - 1);
-          Input = Input.Remove(Input.Length - 1);
+          ReturnCursor();
+
+          _input = _input.Remove(_input.Length - 1);
           OnRefresh();
         }
       }
@@ -100,11 +160,13 @@ namespace ConsoleBattleship
     {
       if (key.Key == ConsoleKey.Enter)
       {
-        Console.Write(new string('\b', Input.Length));
-        Console.Write(new string(' ', Input.Length));
-        ScreenString = ScreenString[..InitialScreenSize];
-        OnInput(Input);
-        Input = "";
+        SetCursorToEnd();
+        Console.Write(new string('\b', _input.Length));
+        Console.Write(new string(' ', _input.Length));
+        ReturnCursor();
+
+        OnInput(_input);
+        _input = "";
         OnRefresh();
       }
     }
@@ -113,8 +175,7 @@ namespace ConsoleBattleship
     {
       if (char.IsLetterOrDigit(key.KeyChar))
       {
-        Input += key.KeyChar;
-        ScreenString += key.KeyChar;
+        _input += key.KeyChar;
         OnRefresh();
       }
     }
@@ -123,32 +184,51 @@ namespace ConsoleBattleship
     {
       if (key.Key == ConsoleKey.Escape)
       {
-        running = false;
+        _running = false;
       }
     }
-  
+
+    private void HandleArrowKeys(ConsoleKeyInfo key)
+    {
+      switch (key.Key)
+      {
+        case ConsoleKey.LeftArrow:
+          MoveCrosshairBy(-1, 0);
+          break;
+        case ConsoleKey.RightArrow:
+          MoveCrosshairBy(1, 0);
+          break;
+        case ConsoleKey.UpArrow:
+          MoveCrosshairBy(0, -1);
+          break;
+        case ConsoleKey.DownArrow:
+          MoveCrosshairBy(0, 1);
+          break;
+        default: break;
+      }
+    }
 
     // SINGLETON GETTERS
     public static Screen GetScreen(int width, int height)
     {
-      if (Instance.Height != height || Instance.Width != width)
+      if (s_instance._height != height || s_instance._width != width)
       {
-        Instance = new Screen(width, height);
+        s_instance = new Screen(width, height);
       }
 
-      return Instance;
+      return s_instance;
     }
 
     public static Screen GetScreen()
     {
-      return Instance;
+      return s_instance;
     }
 
 
     // GAME LOOP HANDLING
     private void ReceiveInputContinuosly()
     {
-      while (running)
+      while (_running)
       {
         if (Console.KeyAvailable)
         {
@@ -168,16 +248,69 @@ namespace ConsoleBattleship
 
     public void Start()
     {
-      running = true;
+      _running = true;
       OnRefresh();
       StartReceivingInputContinuosly();
     }
 
     public void Stop()
     {
-        running = false;
+        _running = false;
     }
 
+    // HELPERS
 
+    private void SetCursorToEnd()
+    {
+      int left  = (_inputPrompt.Length + _input.Length) % Console.BufferWidth;
+      int top   = _height + 1 + ((_inputPrompt.Length + _input.Length) / Console.BufferWidth + left > 0 ? 1 : 0);
+
+      SetCursorTo(left, top);
+    }
+
+    private void SetCursorToBegin()
+    {
+      SetCursorTo(0, 0);
+    }
+
+    private void SetCursorTo(int left, int top)
+    {
+      if (!_movingCursor)
+      {
+        _cursorLocation = Console.GetCursorPosition();
+        _movingCursor = true;
+      }
+
+      Console.SetCursorPosition(left, top);
+    }
+
+    private void ReturnCursor()
+    {      
+      _movingCursor = false;
+      Console.SetCursorPosition(_cursorLocation.Item1, _cursorLocation.Item2);
+    }
+
+    private void MoveCrosshairBy(int x, int y)
+    {
+      (int, int) CrosshairOldLocation = _crosshairLocation;
+
+      _crosshairLocation.Item1 += x;
+      _crosshairLocation.Item2 += y;
+
+      int CrosshairSize = 2;
+
+      if (0 + CrosshairSize >= _crosshairLocation.Item1 || _crosshairLocation.Item1 > _width - CrosshairSize)
+      {
+        _crosshairLocation.Item1 = CrosshairOldLocation.Item1;
+      }
+
+      if (0 + CrosshairSize >= _crosshairLocation.Item2 || _crosshairLocation.Item2 > _height)
+      {
+        _crosshairLocation.Item2 = CrosshairOldLocation.Item2;
+      }
+
+
+      OnRefresh();
+    }
   }
 }
