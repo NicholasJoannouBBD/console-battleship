@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleBattleship.states
 {
     /// <summary>
-    /// This class serves as the parent/base for each state in the state machine, within each state, these functions can be called 
+    /// This class serves as the parent/base for each state in the state machine, within each state, these functions can be called/overridden 
     /// even if they do not exist
     /// </summary>
     internal class BaseState
@@ -22,7 +22,5 @@ namespace ConsoleBattleship.states
         public virtual void Update(params object[] args) { }
         //what is rendered to the screen
         public virtual void Render(params object[] args) { }
-
-        
     }
 }

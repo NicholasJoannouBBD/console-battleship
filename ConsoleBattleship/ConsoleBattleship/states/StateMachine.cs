@@ -6,20 +6,40 @@ using System.Threading.Tasks;
 
 namespace ConsoleBattleship.states
 {
+    /// <summary>
+    /// Singleton class that enables states to access the collection of states to switch between one another without creating
+    /// references to a new StateMachine object.
+    /// </summary>
     internal class StateMachine
     {
+        #region Declarations
+        //Singleton instance
         static StateMachine stateMachineInstance;
         static readonly object lockSM = new object();
+        //empty state
         static BaseState empty = new BaseState();
+        //collection of existing states
         static Dictionary<string, BaseState>? states;
+        //current state
         static BaseState current;
+        #endregion
+
+        #region Constants
+        //State machine constants for keys
+        const string _EXAMPLE = "Example";
+        const string _SECOND = "Second";
+        #endregion
+
+        #region Properties
+        public string EXAMPLE { get { return _EXAMPLE; } }
+        public string SECOND { get { return _SECOND; } }
         public static StateMachine StateMachineInstance
         {
             get
             {
                 lock (lockSM)
                 {
-                    if(stateMachineInstance == null)
+                    if (stateMachineInstance == null)
                     {
                         stateMachineInstance = new StateMachine();
                     }
@@ -27,13 +47,9 @@ namespace ConsoleBattleship.states
                 }
             }
         }
+        #endregion
 
-        //State machine constants
-        const string _EXAMPLE = "Example";
-        const string _SECOND = "Second";
-
-        public string EXAMPLE { get { return _EXAMPLE; } }
-        public string SECOND { get { return _SECOND; } }
+        #region Constructor
         private StateMachine() 
         {
             //See implementation and expansion of the state machine
@@ -46,26 +62,22 @@ namespace ConsoleBattleship.states
             states = statesRef;
             current = empty;
         }
+        #endregion
 
-        //can be changed to bool return to validate state change
+        #region public Methods
         public void ChangeState(string stateName, params object[] args)
         {
-            try
+            bool exists = states?.ContainsKey(stateName) ?? false;
+            if (exists)
             {
-                if (states.ContainsKey(stateName))
-                {
-                    current.Exit();
-                    current = states[stateName];
-                    current.Enter(args);
-                }
-                else
-                {
-                    //state does not exist
-                }
+                current.Exit();
+                current = states?[stateName]??empty;
+                current.Enter(args);
             }
-            catch (NullReferenceException e)
+            else
             {
-                Console.WriteLine("This state does not exist");
+                //state does not exist
+                //decide what to do
             }
         }
 
@@ -78,5 +90,6 @@ namespace ConsoleBattleship.states
         {
             current.Render();
         }
+        #endregion
     }
 }
