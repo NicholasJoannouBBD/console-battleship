@@ -297,14 +297,14 @@ namespace ConsoleBattleship
       _crosshairLocation.Item1 += x;
       _crosshairLocation.Item2 += y;
 
-      int CrosshairSize = 2;
+      int CrosshairSize = 0; // equal to crosshair size / 2 rounded down
 
-      if (0 + CrosshairSize >= _crosshairLocation.Item1 || _crosshairLocation.Item1 > _width - CrosshairSize)
+      if (0 + s_padding + CrosshairSize >= _crosshairLocation.Item1 || _crosshairLocation.Item1 > _width - s_padding - CrosshairSize)
       {
         _crosshairLocation.Item1 = CrosshairOldLocation.Item1;
       }
 
-      if (0 + CrosshairSize >= _crosshairLocation.Item2 || _crosshairLocation.Item2 > _height)
+      if (0 +  CrosshairSize >= _crosshairLocation.Item2 || _crosshairLocation.Item2 > _height)
       {
         _crosshairLocation.Item2 = CrosshairOldLocation.Item2;
       }

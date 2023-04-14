@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConsoleBattleship;
 
-Screen screen = Screen.GetScreen();
+Screen screen = Screen.GetScreen(80, 20);
 
 screen.Start();
 
