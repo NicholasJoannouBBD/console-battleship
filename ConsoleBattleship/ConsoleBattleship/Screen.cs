@@ -12,6 +12,7 @@ namespace ConsoleBattleship
     private static readonly Color s_borderColor = Color.FromArgb(165, 229, 250); // Blue
     private static readonly Color s_inputPromptColor = Color.FromArgb(250, 129, 120); // Red
 
+    private static readonly int s_refreshRate = 10;
     private static readonly int s_padding = 2;
 
     public static readonly string s_background = "V".Pastel(s_backgroundCharColor).PastelBg(s_backgroundColor);
@@ -24,19 +25,16 @@ namespace ConsoleBattleship
     private readonly int _height; //Height scales 2x as fast as width
     private readonly int _width;
     private readonly string _inputPrompt = "input: ";
+    private readonly object _consoleLock = new object();
 
     private string _input = "";
-    private (int, int) _cursorLocation = Console.GetCursorPosition();
     private (int, int) _crosshairLocation;
-    private bool _movingCursor = false;
-    private bool _cursorLocked = false;
     private bool _running = true;
-    private Thread _scheduledRefresh;
-    
+
     public readonly Grid BattleshipGrid;
 
     public delegate void RefreshDelegate();
-    public event RefreshDelegate OnRefresh = delegate { };
+    public Action OnRefresh = delegate { };
 
     public delegate void InputDelegate(string input);
     public event InputDelegate OnInput = delegate { };
@@ -58,12 +56,6 @@ namespace ConsoleBattleship
 
       BattleshipGrid = new Grid(width - s_padding * 2, height, s_background);
 
-      _scheduledRefresh = new Thread(() =>
-      {
-        Thread.Sleep(10);
-        OnRefresh();
-      });
-
       AddAllDelegates();
     }
 
@@ -71,35 +63,21 @@ namespace ConsoleBattleship
     {
       OnRefresh += RefreshGrid;
       OnRefresh += RefreshInput;
-      OnRefresh += RefreshCrosshair;
+      OnRefresh += RefreshBorder;
 
       OnKeyPressed += HandleBackspace;
       OnKeyPressed += HandleEnter;
       OnKeyPressed += HandleAlphaNumeric;
       OnKeyPressed += HandleEscape;
       OnKeyPressed += HandleArrowKeys;
-
-      BattleshipGrid.OnChange += (int row, int column, string oldValue, string newValue) => { ScheduleRefresh(); };
     }
 
 
     // EVENT HANDLERS
-    // Battleship Grid On Change
-    private void ScheduleRefresh()
-    {
-      if (_scheduledRefresh.ThreadState == ThreadState.Running) return;
-      _scheduledRefresh = new Thread(() =>
-      {
-        Thread.Sleep(10);
-        OnRefresh();
-      });
-      _scheduledRefresh.Start();
-    }
 
     // On Refresh
     private void RefreshBorder()
     {
-      GetCursor();
       SetCursorToBegin();
       string Top = new string(' ', s_padding)
         + "┌".Pastel(s_borderColor).PastelBg(s_backgroundColor)
@@ -109,13 +87,13 @@ namespace ConsoleBattleship
       Console.Write(Top);
       for (int i = 0; i < _height; i++)
       {
-        SetCursorTo(s_padding, Console.GetCursorPosition().Top + 1);
+        Console.SetCursorPosition(s_padding, Console.GetCursorPosition().Top + 1);
         Console.Write("│".Pastel(s_borderColor).PastelBg(s_backgroundColor));
-        SetCursorTo(_width - s_padding + 1, Console.GetCursorPosition().Top);
+        Console.SetCursorPosition(_width - s_padding + 1, Console.GetCursorPosition().Top);
         Console.Write("│".Pastel(s_borderColor).PastelBg(s_backgroundColor));
       }
 
-      SetCursorTo(0, Console.GetCursorPosition().Top + 1);
+      Console.SetCursorPosition(0, Console.GetCursorPosition().Top + 1);
 
       string Bottom = new string(' ', s_padding)
         + "└".Pastel(s_borderColor).PastelBg(s_backgroundColor)
@@ -123,58 +101,35 @@ namespace ConsoleBattleship
         + "┘".Pastel(s_borderColor).PastelBg(s_backgroundColor);
       Console.Write(Bottom);
 
-      ReturnCursor();
     }
 
     private void RefreshInput()
     {
-      GetCursor();
-      SetCursorTo(s_padding, _height + 2);
-      Console.Write(_inputPrompt.Pastel(s_inputPromptColor) + _input + "  ");
-      ReturnCursor();
+        Console.SetCursorPosition(s_padding, _height + 2);
+        Console.Write(_inputPrompt.Pastel(s_inputPromptColor) + _input + " ");
     }
 
     private void RefreshGrid()
     {
-      GetCursor();
-      SetCursorToBegin();
+      int i = 0;
       foreach (string[] row in BattleshipGrid.GetAllRows())
       {
-        SetCursorTo(s_padding + 1, Console.GetCursorPosition().Top + 1);
+        Console.SetCursorPosition(s_padding + 1, i + 1);
 
-        //This is to reduce stuttering
-        if (Console.GetCursorPosition().Top == _crosshairLocation.Item2)
+        string[] rowCopy = new string[row.Length]; 
+
+        row.CopyTo(rowCopy, 0);
+
+        if (i == _crosshairLocation.Item2 - 1)
         {
-          Console.Write(string.Join("", row[..(_crosshairLocation.Item1 - 3)]));
-          SetCursorTo(_crosshairLocation.Item1 + 1 , Console.GetCursorPosition().Top);
-          Console.Write(string.Join("", row[(_crosshairLocation.Item1 - 2)..]));
+          rowCopy[_crosshairLocation.Item1 - 1 - s_padding] = "┼".Pastel(s_crosshairColor).PastelBg(s_backgroundColor);
         }
-        else
-        {
-          Console.Write(string.Join("", row));
-        }
-        
+
+        string rowString = string.Join("", rowCopy);
+
+        Console.Write(rowString);
+        i++;
       }
-      ReturnCursor();
-    }
-
-    private void RefreshCrosshair()
-    {
-      GetCursor();
-      SetCursorTo(_crosshairLocation.Item1, _crosshairLocation.Item2);
-      Console.Write("┼".Pastel(s_crosshairColor).PastelBg(s_backgroundColor));
-
-      // Bigger Crosshair
-      /*SetCursorTo(CrosshairLocation.Item1, CrosshairLocation.Item2);
-      Console.Write("╿".Pastel(CrosshairColor));
-      SetCursorTo(CrosshairLocation.Item1 - 2, CrosshairLocation.Item2 - 1);
-      Console.Write("─╼".Pastel(CrosshairColor));
-      SetCursorTo(CrosshairLocation.Item1 + 1, CrosshairLocation.Item2 - 1);
-      Console.Write("╾─".Pastel(CrosshairColor));
-      SetCursorTo(CrosshairLocation.Item1, CrosshairLocation.Item2 - 2);
-      Console.Write("╽".Pastel(CrosshairColor));*/
-
-      ReturnCursor();
     }
 
     // On Key Pressed
@@ -182,15 +137,14 @@ namespace ConsoleBattleship
     {
       if (key.Key == ConsoleKey.Backspace)
       {
-        if (_input.Length != 0)
+        if (_input.Length > 0)
         {
-          GetCursor();
-          SetCursorToEnd();
-          Console.Write("\b ");
-          ReturnCursor();
-
+          lock (_consoleLock)
+          {
+            Console.SetCursorPosition(GetEnd().Item1, GetEnd().Item2);
+            Console.Write(" ");
+          }
           _input = _input.Remove(_input.Length - 1);
-          OnRefresh();
         }
       }
     }
@@ -199,24 +153,24 @@ namespace ConsoleBattleship
     {
       if (key.Key == ConsoleKey.Enter)
       {
-        GetCursor();
-        SetCursorToEnd();
-        Console.Write(new string('\b', _input.Length));
-        Console.Write(new string(' ', _input.Length));
-        ReturnCursor();
-
+        if (_input.Length > 0)
+        {
+          lock (_consoleLock)
+          {
+            Console.SetCursorPosition(GetEnd().Item1, GetEnd().Item2);
+            Console.Write(new string('\b', _input.Length - 1) + new string(' ', _input.Length + 5));
+          }
+        }
         OnInput(_input);
         _input = "";
-        OnRefresh();
       }
     }
 
     private void HandleAlphaNumeric(ConsoleKeyInfo key)
     {
-      if (char.IsLetterOrDigit(key.KeyChar))
+      if (char.IsLetterOrDigit(key.KeyChar) || key.Key == ConsoleKey.Spacebar)
       {
         _input += key.KeyChar;
-        OnRefresh();
       }
     }
 
@@ -286,13 +240,33 @@ namespace ConsoleBattleship
       In.Start();
     }
 
+    private void UpdateContinuously()
+    {
+      while (_running)
+      {
+        Thread.Sleep(s_refreshRate);
+        lock (_consoleLock)
+        {
+          OnRefresh.Invoke();
+        }
+      }
+    }
+
+    private void StartUpdatingContinuosly()
+    {
+      Thread Update = new Thread(() =>
+      {
+        UpdateContinuously();
+      });
+
+      Update.Start();
+    }
+
     public void Start()
     {
       _running = true;
-      OnRefresh();
       StartReceivingInputContinuosly();
-      // Doesn't really need to be refreshed more than once
-      RefreshBorder();
+      StartUpdatingContinuosly();
     }
 
     public void Stop()
@@ -301,43 +275,18 @@ namespace ConsoleBattleship
     }
 
     // HELPERS
-
-    private void GetCursor()
+    private (int, int) GetEnd()
     {
-      while (_cursorLocked) { }
+      int left = (_inputPrompt.Length + _input.Length) % Console.BufferWidth;
+      int top = _height + 1 + ((_inputPrompt.Length + _input.Length) / Console.BufferWidth + left > 0 ? 1 : 0);
 
-      _cursorLocked = true;
-    }
 
-    private void SetCursorToEnd()
-    {
-      int left  = (_inputPrompt.Length + _input.Length) % Console.BufferWidth;
-      int top   = _height + 1 + ((_inputPrompt.Length + _input.Length) / Console.BufferWidth + left > 0 ? 1 : 0);
-
-      SetCursorTo(left, top);
+      return (left, top);
     }
 
     private void SetCursorToBegin()
     {
-      SetCursorTo(0, 0);
-    }
-
-    private void SetCursorTo(int left, int top)
-    {
-      if (!_movingCursor)
-      {
-        _cursorLocation = Console.GetCursorPosition();
-        _movingCursor = true;
-      }
-
-      Console.SetCursorPosition(left, top);
-    }
-
-    private void ReturnCursor()
-    {      
-      _movingCursor = false;
-      Console.SetCursorPosition(_cursorLocation.Item1, _cursorLocation.Item2);
-      _cursorLocked = false;
+      Console.SetCursorPosition(0, 0);
     }
 
     private void MoveCrosshairBy(int x, int y)
@@ -347,20 +296,15 @@ namespace ConsoleBattleship
       _crosshairLocation.Item1 += x;
       _crosshairLocation.Item2 += y;
 
-      int CrosshairSize = 0; // equal to crosshair size / 2 rounded down
-
-      if (0 + s_padding + CrosshairSize >= _crosshairLocation.Item1 || _crosshairLocation.Item1 > _width - s_padding - CrosshairSize)
+      if (0 + s_padding >= _crosshairLocation.Item1 || _crosshairLocation.Item1 > _width - s_padding)
       {
         _crosshairLocation.Item1 = CrosshairOldLocation.Item1;
       }
 
-      if (0 +  CrosshairSize >= _crosshairLocation.Item2 || _crosshairLocation.Item2 > _height)
+      if (0 >= _crosshairLocation.Item2 || _crosshairLocation.Item2 > _height)
       {
         _crosshairLocation.Item2 = CrosshairOldLocation.Item2;
       }
-
-
-      OnRefresh();
     }
   }
 }
