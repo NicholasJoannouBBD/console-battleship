@@ -33,10 +33,13 @@
     /// <returns>The previous character in that position</returns>
     public string ReplaceChar(int row, int column, string c)
     {
-      string old = _gridArray[row][column];
-      _gridArray[row][column] = c;
-      OnChange(row, column, old, c);
-      return old;
+      if (0 < row && row < _height && 0 < column && column < _width) {
+        string old = _gridArray[row][column];
+        _gridArray[row][column] = c;
+        OnChange(row, column, old, c);
+        return old;
+      }
+      return null;
     }
 
     public string GetChar(int row, int column)
@@ -49,11 +52,11 @@
       return string.Join("", _gridArray[row]);
     }
 
-    public IEnumerable<String> GetAllRows()
+    public IEnumerable<String[]> GetAllRows()
     {
       for (int i = 0; i < _height; i++)
       {
-        yield return GetRow(i);
+        yield return _gridArray[i];
       }
     }
   }

@@ -13,7 +13,8 @@ namespace ConsoleBattleship
     private static readonly Color s_inputPromptColor = Color.FromArgb(250, 129, 120); // Red
 
     private static readonly int s_padding = 2;
-    private static readonly string s_background = "V".Pastel(s_backgroundCharColor).PastelBg(s_backgroundColor);
+
+    public static readonly string s_background = "V".Pastel(s_backgroundCharColor).PastelBg(s_backgroundColor);
 
     private static Screen s_instance = new(
       Console.WindowWidth - (2 * s_padding) - 2,
@@ -24,11 +25,12 @@ namespace ConsoleBattleship
     private readonly int _width;
     private readonly string _inputPrompt = "input: ";
 
-    private bool _running = true;
     private string _input = "";
     private (int, int) _cursorLocation = Console.GetCursorPosition();
     private (int, int) _crosshairLocation;
     private bool _movingCursor = false;
+    private bool _cursorLocked = false;
+    private bool _running = true;
     
     public readonly Grid BattleshipGrid;
 
@@ -55,12 +57,12 @@ namespace ConsoleBattleship
 
       BattleshipGrid = new Grid(width - s_padding * 2, height, s_background);
 
+
       AddAllDelegates();
     }
 
     private void AddAllDelegates()
     {
-      OnRefresh += RefreshBorder;
       OnRefresh += RefreshGrid;
       OnRefresh += RefreshInput;
       OnRefresh += RefreshCrosshair;
@@ -79,6 +81,7 @@ namespace ConsoleBattleship
     // On Refresh
     private void RefreshBorder()
     {
+      GetCursor();
       SetCursorToBegin();
       string Top = new string(' ', s_padding)
         + "┌".Pastel(s_borderColor).PastelBg(s_backgroundColor)
@@ -107,6 +110,7 @@ namespace ConsoleBattleship
 
     private void RefreshInput()
     {
+      GetCursor();
       SetCursorTo(s_padding, _height + 2);
       Console.Write(_inputPrompt.Pastel(s_inputPromptColor) + _input);
       ReturnCursor();
@@ -114,17 +118,31 @@ namespace ConsoleBattleship
 
     private void RefreshGrid()
     {
+      GetCursor();
       SetCursorToBegin();
-      foreach (string row in BattleshipGrid.GetAllRows())
+      foreach (string[] row in BattleshipGrid.GetAllRows())
       {
         SetCursorTo(s_padding + 1, Console.GetCursorPosition().Top + 1);
-        Console.Write(row);
+
+        //This is to reduce stuttering
+        if (Console.GetCursorPosition().Top == _crosshairLocation.Item2)
+        {
+          Console.Write(string.Join("", row[..(_crosshairLocation.Item1 - 3)]));
+          SetCursorTo(_crosshairLocation.Item1 + 1 , Console.GetCursorPosition().Top);
+          Console.Write(string.Join("", row[(_crosshairLocation.Item1 - 2)..]));
+        }
+        else
+        {
+          Console.Write(string.Join("", row));
+        }
+        
       }
       ReturnCursor();
     }
 
     private void RefreshCrosshair()
     {
+      GetCursor();
       SetCursorTo(_crosshairLocation.Item1, _crosshairLocation.Item2);
       Console.Write("┼".Pastel(s_crosshairColor).PastelBg(s_backgroundColor));
 
@@ -148,6 +166,7 @@ namespace ConsoleBattleship
       {
         if (_input.Length != 0)
         {
+          GetCursor();
           SetCursorToEnd();
           Console.Write("\b ");
           ReturnCursor();
@@ -162,6 +181,7 @@ namespace ConsoleBattleship
     {
       if (key.Key == ConsoleKey.Enter)
       {
+        GetCursor();
         SetCursorToEnd();
         Console.Write(new string('\b', _input.Length));
         Console.Write(new string(' ', _input.Length));
@@ -253,6 +273,8 @@ namespace ConsoleBattleship
       _running = true;
       OnRefresh();
       StartReceivingInputContinuosly();
+      // Doesn't really need to be refreshed more than once
+      RefreshBorder();
     }
 
     public void Stop()
@@ -261,6 +283,13 @@ namespace ConsoleBattleship
     }
 
     // HELPERS
+
+    private void GetCursor()
+    {
+      while (_cursorLocked) { }
+
+      _cursorLocked = true;
+    }
 
     private void SetCursorToEnd()
     {
@@ -290,6 +319,7 @@ namespace ConsoleBattleship
     {      
       _movingCursor = false;
       Console.SetCursorPosition(_cursorLocation.Item1, _cursorLocation.Item2);
+      _cursorLocked = false;
     }
 
     private void MoveCrosshairBy(int x, int y)
