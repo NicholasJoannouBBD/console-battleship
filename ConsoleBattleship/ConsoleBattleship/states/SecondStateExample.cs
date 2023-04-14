@@ -9,11 +9,9 @@ namespace ConsoleBattleship.states
     internal class SecondStateExample : BaseState
     {
         string exampleParam;
-        StateMachine sm;
         public override void enter(params object[] args)
         {
-            this.sm = (StateMachine)args[0];
-            this.exampleParam = (string)args[1];
+            this.exampleParam = (string)args[0];
         }
 
         public override void exit(params object[] args)
@@ -24,13 +22,13 @@ namespace ConsoleBattleship.states
         public override void render(params object[] args)
         {
             //this is all the output to go on the screen.
+            Console.WriteLine("Updating... " + this.exampleParam);
         }
 
         public override void update(params object[] args)
         {
             //function is used to update some logic on an event call, or tick rate.
             this.render();
-            Console.WriteLine("Updating... " + this.exampleParam);
         }
     }
 }

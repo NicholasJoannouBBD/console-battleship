@@ -8,40 +8,75 @@ namespace ConsoleBattleship.states
 {
     internal class StateMachine
     {
-        BaseState empty = new BaseState();
-        Dictionary<string, BaseState>? states;
-        BaseState current;
-        public Dictionary<string, BaseState> States { get; set; }
-
-        public StateMachine(Dictionary<string, BaseState> states)
+        static StateMachine stateMachineInstance;
+        static readonly object lockSM = new object();
+        static BaseState empty = new BaseState();
+        static Dictionary<string, BaseState>? states;
+        static BaseState current;
+        public static StateMachine StateMachineInstance
         {
-            this.States = states??new Dictionary<string, BaseState>() { };
-            this.current = empty;
+            get
+            {
+                lock (lockSM)
+                {
+                    if(stateMachineInstance == null)
+                    {
+                        stateMachineInstance = new StateMachine();
+                    }
+                    return stateMachineInstance;
+                }
+            }
+        }
+
+        //State machine constants
+        const string _EXAMPLE = "Example";
+        const string _SECOND = "Second";
+
+        public string EXAMPLE { get { return _EXAMPLE; } }
+        public string SECOND { get { return _SECOND; } }
+        private StateMachine() 
+        {
+            //See implementation and expansion of the state machine
+            //Append new states by adding them to the dictionary
+            Dictionary<string, BaseState> statesRef = new Dictionary<string, BaseState>()
+            {
+                {EXAMPLE, new StateExample()},
+                {SECOND, new SecondStateExample() }
+            };
+            states = statesRef;
+            current = empty;
         }
 
         //can be changed to bool return to validate state change
         public void changeState(string stateName, params object[] args)
         {
-            if (States.ContainsKey(stateName))
+            try
             {
-                this.current.exit();
-                this.current = this.States[stateName];
-                this.current.enter(args);
+                if (states.ContainsKey(stateName))
+                {
+                    current.exit();
+                    current = states[stateName];
+                    current.enter(args);
+                }
+                else
+                {
+                    //state does not exist
+                }
             }
-            else
+            catch (NullReferenceException e)
             {
-                //state does not exist
+                Console.WriteLine("This state does not exist");
             }
         }
 
         public void updateState()
         {
-            this.current.update();
+            current.update();
         }
 
         public void renderState()
         {
-            this.current.render();
+            current.render();
         }
     }
 }
