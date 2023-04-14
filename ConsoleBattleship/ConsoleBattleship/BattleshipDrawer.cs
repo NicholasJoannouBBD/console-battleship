@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Pastel;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +11,8 @@ namespace ConsoleBattleship
   partial class BattleshipDrawer
   {
 
+    private static readonly Color s_battleshipColor = Color.FromArgb(155, 55, 20); // Red
+
     /// <param name="orientation">In degrees, converted to NESW</param>
     public static void Draw3x1Battleship(Grid grid, int row, int column, int orientation)
     {
@@ -16,27 +20,27 @@ namespace ConsoleBattleship
       {
         case 0:
           // NORTH
-          grid.ReplaceChar(row - 1, column, "┃");
-          grid.ReplaceChar(row, column,     "╬");
-          grid.ReplaceChar(row + 1, column, "╹");
+          grid.ReplaceChar(row - 1, column, "▲".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row + 1, column, "▀".Pastel(s_battleshipColor));
           break;
         case 1:
           // EAST
-          grid.ReplaceChar(row, column + 1, "─");
-          grid.ReplaceChar(row, column,     "╬");
-          grid.ReplaceChar(row, column - 1, "╺");
+          grid.ReplaceChar(row, column + 1, "►".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column - 1, "▐".Pastel(s_battleshipColor));
           break;
         case 2:
           // SOUTH
-          grid.ReplaceChar(row - 1, column, "╻");
-          grid.ReplaceChar(row, column,     "╬");
-          grid.ReplaceChar(row + 1, column, "┃");
+          grid.ReplaceChar(row - 1, column, "▄".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row + 1, column, "▼".Pastel(s_battleshipColor));
           break;
         case 3:
           // WEST
-          grid.ReplaceChar(row, column + 1, "╸");
-          grid.ReplaceChar(row, column,     "╬");
-          grid.ReplaceChar(row, column - 1, "─");
+          grid.ReplaceChar(row, column + 1, "▌".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column - 1, "◄".Pastel(s_battleshipColor));
           break;
 
       }
