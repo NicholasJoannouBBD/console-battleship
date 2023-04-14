@@ -48,15 +48,15 @@ namespace ConsoleBattleship.states
         }
 
         //can be changed to bool return to validate state change
-        public void changeState(string stateName, params object[] args)
+        public void ChangeState(string stateName, params object[] args)
         {
             try
             {
                 if (states.ContainsKey(stateName))
                 {
-                    current.exit();
+                    current.Exit();
                     current = states[stateName];
-                    current.enter(args);
+                    current.Enter(args);
                 }
                 else
                 {
@@ -69,14 +69,14 @@ namespace ConsoleBattleship.states
             }
         }
 
-        public void updateState()
+        public void UpdateState()
         {
-            current.update();
+            current.Update();
         }
 
-        public void renderState()
+        public void RenderState()
         {
-            current.render();
+            current.Render();
         }
     }
 }

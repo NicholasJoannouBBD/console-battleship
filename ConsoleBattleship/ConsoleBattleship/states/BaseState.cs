@@ -13,15 +13,15 @@ namespace ConsoleBattleship.states
     internal class BaseState
     {
         //constructor
-        public virtual void init(params object[] args) { }
+        public virtual void Init(params object[] args) { }
         //what to do on entry
-        public virtual void enter(params object[] args) { }
+        public virtual void Enter(params object[] args) { }
         //what to do on exit
-        public virtual void exit(params object[] args) { }
+        public virtual void Exit(params object[] args) { }
         //Looping function that will handle all logic done every event/repetition
-        public virtual void update(params object[] args) { }
+        public virtual void Update(params object[] args) { }
         //what is rendered to the screen
-        public virtual void render(params object[] args) { }
+        public virtual void Render(params object[] args) { }
 
         
     }

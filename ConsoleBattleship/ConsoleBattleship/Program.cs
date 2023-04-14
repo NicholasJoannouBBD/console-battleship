@@ -6,10 +6,10 @@ Console.WriteLine("Hello, World!");
 // of .NET 6 and I thought it best to go with the latest LTS support
 
 
-StateMachine.StateMachineInstance.changeState(StateMachine.StateMachineInstance.EXAMPLE, new object[]{"123"});
+StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.EXAMPLE, new object[]{"123"});
 
 //temporary infinite loop
 while (true)
 {
-    StateMachine.StateMachineInstance.updateState();
+    StateMachine.StateMachineInstance.UpdateState();
 }

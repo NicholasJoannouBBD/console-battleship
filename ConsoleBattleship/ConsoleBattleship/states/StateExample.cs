@@ -13,30 +13,30 @@ namespace ConsoleBattleship.states
     {
         string exampleParam;
         
-        public override void enter(params object[] args)
+        public override void Enter(params object[] args)
         {
             this.exampleParam = (string)args[0];
         }
 
-        public override void exit(params object[] args)
+        public override void Exit(params object[] args)
         {
             Console.WriteLine("Exiting Example state");
         }
 
-        public override void render(params object[] args)
+        public override void Render(params object[] args)
         {
             //this is all the output to go on the screen.
             Console.WriteLine("Updating... " + this.exampleParam);
             Console.WriteLine("Should I exit? Y/N");
             if (Console.ReadLine().Equals("Y"))
             {
-                StateMachine.StateMachineInstance.changeState(StateMachine.StateMachineInstance.SECOND, new object[] { "Now State 2" });
+                StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.SECOND, new object[] { "Now State 2" });
             }
         }
 
-        public override void update(params object[] args)
+        public override void Update(params object[] args)
         {
-            this.render();
+            this.Render();
             //function is used to update some logic on an event call, or tick rate.
         }
     }
