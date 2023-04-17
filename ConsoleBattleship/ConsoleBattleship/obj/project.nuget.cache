@@ -1,15 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZeeQEPtd9b4sLZ3Zt8NYiXfKom2C5nVV3MR9+CbMPrKBTHxGBgqU3P/m1QNpu220cL2GinD8u0mRKuDWkGUOiw==",
+  "dgSpecHash": "7TbRT3oo+mwyqamd4lCoWLsRseAGUZSx8e4OvctSmKANwWtqBJHX0lA/D5Ng8BDZ+FXdSc3oLzwARkBDahnx/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bbdnet2759\\Desktop\\GradWork\\Level Ups\\C#\\Project\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+  "projectFilePath": "C:\\Users\\bbdnet2798\\Documents\\Graduate Program 2023\\TheHive\\LevelUps\\C# Track\\GroupProject\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512"
+    "C:\\Users\\bbdnet2798\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
+    "C:\\Users\\bbdnet2798\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512"
   ],
   "logs": []
 }
