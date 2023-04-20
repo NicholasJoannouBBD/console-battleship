@@ -1,20 +1,33 @@
 using ConsoleBattleship;
+using ConsoleBattleship.Screen;
 using ConsoleBattleship.states;
 using System.Data.SQLite;
 
-Screen screen = Screen.GetScreen(40, 20);
+MenuScreen menuScreen = MenuScreen.GetScreen(40, 20);
 
-screen.Start();
-//while (true) 
-for (int i = 0; i < 100; i++)
+menuScreen.OnSelectedMenuItem += (string item) =>
 {
-  BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 10, 10, 30 * i);
-  BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 15, 2 * i, 90 );
-  Thread.Sleep(500);
-  BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 10, 10, 30 * i);
-  BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 15 , 2 * i, 90);
-}
-screen.Stop();
+  if (item == "Start")
+  {
+    menuScreen.Stop();  
+    GameScreen gameScreen = GameScreen.GetScreen(40, 20);
+    gameScreen.Start();
+    //while (true) 
+    for (int i = 0; i < 100; i++)
+    {
+      BattleshipDrawer.Draw3x1Battleship(gameScreen.BattleshipGrid, 10, 10, 30 * i);
+      BattleshipDrawer.Draw3x1Battleship(gameScreen.BattleshipGrid, 15, 2 * i, 90);
+      Thread.Sleep(500);
+      BattleshipDrawer.UndoDraw3x1Battleship(gameScreen.BattleshipGrid, 10, 10, 30 * i);
+      BattleshipDrawer.UndoDraw3x1Battleship(gameScreen.BattleshipGrid, 15, 2 * i, 90);
+    }
+
+    gameScreen.Stop();
+  }
+};
+
+menuScreen.Start();
+
 
 DbHandler dbHandler = new DbHandler();
 
@@ -28,5 +41,5 @@ StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.
 //temporary infinite loop
 while (true)
 {
-    StateMachine.StateMachineInstance.UpdateState();
+    //StateMachine.StateMachineInstance.UpdateState();
 }
