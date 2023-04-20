@@ -28,11 +28,46 @@ namespace ConsoleBattleship.states
         //State machine constants for keys
         const string _EXAMPLE = "Example";
         const string _SECOND = "Second";
+        const string _LOGIN = "Login";
+        const string _CREATEACCOUNT = "CreateAccount";
+        const string _MENU = "Menu";
+        const string _PROFILE = "Profile";
+        const string _FINDGAME = "FindGame";
+        const string _PLAYERDETAILS = "Details";
+        const string _HIGHSCORES = "HighScores";
+        const string _GAMESETUP = "Setup";
+        const string _TURN = "Turn";
+        const string _WAIT = "Wait";
+        const string _GAMEOVER = "GameOver";
+        const string _EXIT = "Exit";
         #endregion
 
         #region Properties
-        public string EXAMPLE { get { return _EXAMPLE; } }
-        public string SECOND { get { return _SECOND; } }
+        public static string EXAMPLE => _EXAMPLE;
+        public static string SECOND => _SECOND;
+        public static string LOGIN => _LOGIN;
+
+        public static string CREATEACCOUNT => _CREATEACCOUNT;
+
+        public static string MENU => _MENU;
+
+        public static string PROFILE => _PROFILE;
+
+        public static string FINDGAME => _FINDGAME;
+
+        public static string PLAYERDETAILS => _PLAYERDETAILS;
+
+        public static string HIGHSCORES => _HIGHSCORES;
+
+        public static string GAMESETUP => _GAMESETUP;
+
+        public static string TURN => _TURN;
+
+        public static string WAIT => _WAIT;
+
+        public static string GAMEOVER => _GAMEOVER;
+
+        public static string EXIT => _EXIT;
         public static StateMachine StateMachineInstance
         {
             get
@@ -47,6 +82,8 @@ namespace ConsoleBattleship.states
                 }
             }
         }
+
+        
         #endregion
 
         #region Constructor
@@ -57,7 +94,19 @@ namespace ConsoleBattleship.states
             Dictionary<string, BaseState> statesRef = new Dictionary<string, BaseState>()
             {
                 {EXAMPLE, new StateExample()},
-                {SECOND, new SecondStateExample() }
+                {SECOND, new SecondStateExample() },
+                {LOGIN, new LoginState() },
+                {CREATEACCOUNT, new CreateAccountState() },
+                {MENU, new MenuState() },
+                {PROFILE, new ProfileState() },
+                {FINDGAME, new FindGameState() },
+                {PLAYERDETAILS, new PlayerDetailsState() },
+                {HIGHSCORES, new HighScoreState() },
+                {GAMESETUP, new GameSetupState() },
+                {TURN, new TurnState() },
+                {WAIT, new WaitState() },
+                {GAMEOVER, new GameOverState() },
+                {EXIT, new ExitState() }
             };
             states = statesRef;
             current = empty;
