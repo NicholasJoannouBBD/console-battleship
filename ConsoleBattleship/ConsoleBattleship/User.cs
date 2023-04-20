@@ -120,9 +120,9 @@ namespace ConsoleBattleship
             Console.WriteLine(UserName);
             Console.WriteLine("Own Board:                 Firing Board:");
             
-            for(int row = 1; row < board.Width; row++)
+            for(int row = 1; row <= board.Width; row++)
             {
-                for(int column = 1; column < board.Height; column++) 
+                for(int column = 1; column <= board.Height; column++) 
                 {
                     Cell cellAt = At(board.Cells, row, column);
                     Console.Write(cellAt.Status + " ");

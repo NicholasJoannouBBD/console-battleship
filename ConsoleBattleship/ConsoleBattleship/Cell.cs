@@ -44,7 +44,7 @@ namespace ConsoleBattleship
                 else if (CellOccupation == CellOccupation.Hit)
                     return "X";
                 else
-                    return "";
+                    return "o";
             }
         }
 
