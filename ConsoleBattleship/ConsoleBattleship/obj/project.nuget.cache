@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "JENtNG78lZgvXVVcsB1kNkQFxybopkGYNWwWhtTdM+berLhyWr0fZwgZkq/eV0Q7B07LxD9151QfNwWbF0+uoQ==",
   "success": true,
   "projectFilePath": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/ConsoleBattleship.csproj",
@@ -7,6 +8,15 @@
     "/Users/xander/.nuget/packages/pastel/4.1.0/pastel.4.1.0.nupkg.sha512",
     "/Users/xander/.nuget/packages/stub.system.data.sqlite.core.netstandard/1.0.117/stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
     "/Users/xander/.nuget/packages/system.data.sqlite.core/1.0.117/system.data.sqlite.core.1.0.117.nupkg.sha512"
+=======
+  "dgSpecHash": "I94TQsKBLOQn6kDzJnDfAkMkmL9SnWM80cY0uWqZevLVEG0BHtQeIictgqlz1X2KjWdtFlYoQtuAt5eECDz8Kg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bbdnet2841\\.nuget\\packages\\pastel\\4.1.0\\pastel.4.1.0.nupkg.sha512",
+    "C:\\Users\\bbdnet2841\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
+    "C:\\Users\\bbdnet2841\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512"
+>>>>>>> main
   ],
   "logs": []
 }
