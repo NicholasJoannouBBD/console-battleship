@@ -1,16 +1,15 @@
 using ConsoleBattleship;
-using ConsoleBattleship.Screen;
 using ConsoleBattleship.states;
 using System.Data.SQLite;
 
-DbHandler dbHandler = new DbHandler();
+DbHandler dbHandler = DbHandler.Instance;
 
 string url = @"URI=file:battleship.db";
 using var connection = new SQLiteConnection(url);
 connection.Open();
 
 
-StateMachine.StateMachineInstance.ChangeState(StateMachine.MENU, new object[] {});
+StateMachine.StateMachineInstance.ChangeState(StateMachine.LOGIN, new object[] {});
 
 //temporary infinite loop
 while (true)
