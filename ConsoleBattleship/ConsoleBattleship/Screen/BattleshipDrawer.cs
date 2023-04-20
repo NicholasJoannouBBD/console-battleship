@@ -1,17 +1,10 @@
 ﻿using Pastel;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleBattleship
+namespace ConsoleBattleship.Screen
 {
   partial class BattleshipDrawer
   {
 
-    private static readonly Color s_battleshipColor = Color.FromArgb(155, 55, 20); // Red
 
     /// <param name="orientation">In degrees, converted to NESW</param>
     public static void Draw3x1Battleship(Grid grid, int row, int column, int orientation)
@@ -20,27 +13,27 @@ namespace ConsoleBattleship
       {
         case 0:
           // NORTH
-          grid.ReplaceChar(row - 1, column, "▲".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row + 1, column, "▀".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row - 1, column, "▲".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row, column,     "█".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row + 1, column, "▀".Pastel(Colors.Battleship));
           break;
         case 1:
           // EAST
-          grid.ReplaceChar(row, column + 1, "►".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row, column - 1, "▐".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column + 1, "►".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row, column,     "█".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row, column - 1, "▐".Pastel(Colors.Battleship));
           break;
         case 2:
           // SOUTH
-          grid.ReplaceChar(row - 1, column, "▄".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row + 1, column, "▼".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row - 1, column, "▄".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row, column,     "█".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row + 1, column, "▼".Pastel(Colors.Battleship));
           break;
         case 3:
           // WEST
-          grid.ReplaceChar(row, column + 1, "▌".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row, column,     "█".Pastel(s_battleshipColor));
-          grid.ReplaceChar(row, column - 1, "◄".Pastel(s_battleshipColor));
+          grid.ReplaceChar(row, column + 1, "▌".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row, column,     "█".Pastel(Colors.Battleship));
+          grid.ReplaceChar(row, column - 1, "◄".Pastel(Colors.Battleship));
           break;
 
       }
@@ -52,27 +45,27 @@ namespace ConsoleBattleship
       {
         case 0:
           // NORTH
-          grid.ReplaceChar(row + 1, column, Screen.s_background);
-          grid.ReplaceChar(row, column, Screen.s_background);
-          grid.ReplaceChar(row - 1, column, Screen.s_background);
+          grid.ReplaceChar(row + 1, column, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row, column, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row - 1, column, GameScreen.BackgroundChar);
           break;
         case 1:
           // EAST
-          grid.ReplaceChar(row, column + 1, Screen.s_background);
-          grid.ReplaceChar(row, column, Screen.s_background);
-          grid.ReplaceChar(row, column - 1, Screen.s_background);
+          grid.ReplaceChar(row, column + 1, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row, column, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row, column - 1, GameScreen.BackgroundChar);
           break;
         case 2:
           // SOUTH
-          grid.ReplaceChar(row + 1, column, Screen.s_background);
-          grid.ReplaceChar(row, column, Screen.s_background);
-          grid.ReplaceChar(row - 1, column, Screen.s_background);
+          grid.ReplaceChar(row + 1, column, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row, column, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row - 1, column, GameScreen.BackgroundChar);
           break;
         case 3:
           // WEST
-          grid.ReplaceChar(row, column + 1, Screen.s_background);
-          grid.ReplaceChar(row, column, Screen.s_background);
-          grid.ReplaceChar(row, column - 1, Screen.s_background);
+          grid.ReplaceChar(row, column + 1, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row, column, GameScreen.BackgroundChar);
+          grid.ReplaceChar(row, column - 1, GameScreen.BackgroundChar);
           break;
 
       }

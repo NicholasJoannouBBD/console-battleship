@@ -11,11 +11,4 @@
     <PackageReference Include="Pastel" Version="4.1.0" />
     <PackageReference Include="System.Data.SQLite.COre" Version="1.0.117" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Scores\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scores\" />
-  </ItemGroup>
 </Project>

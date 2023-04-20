@@ -24,7 +24,7 @@ namespace ConsoleBattleship.Score
         public string winningUsername;
         public string loosingUsername;
 
-        private DbHandler databaseX = new DbHandler();
+        private DbHandler databaseX = DbHandler.Instance;
 
         public Score()
         {
@@ -103,8 +103,8 @@ namespace ConsoleBattleship.Score
 
         private void updateDatabase(string winningUsername, string loosingUsername)
         {
-            databaseX.updateUserWins(SQLiteConnection, winningUsername);
-            databaseX.updateUserLosses(SQLiteConnection, loosingUsername);
+            databaseX.updateUserWins(winningUsername);
+            databaseX.updateUserLosses(loosingUsername);
         }
 
         public string displayLeaderboard()
