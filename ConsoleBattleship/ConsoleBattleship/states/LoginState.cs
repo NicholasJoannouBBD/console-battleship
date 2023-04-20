@@ -12,7 +12,7 @@ namespace ConsoleBattleship.states
         private LoginScreen screen = LoginScreen.GetScreen();
         public override void Enter(params object[] args)
         {
-          screen.OnLoginAttempt += (string user, string password) =>
+          screen.OnLoginAttempt += (string user, string password, bool registering) =>
           {
             //If login true:
               screen.Stop();

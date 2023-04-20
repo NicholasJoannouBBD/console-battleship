@@ -6,7 +6,7 @@ namespace ConsoleBattleship.Screen
   {
     private static readonly int s_padding = 2;
     public static readonly List<string> MenuItems = new(){
-      "Login", "User", "Password", "Submit"
+      "LOGIN", "User", "Password", "Submit", "Register"
     };
 
     private string _user = "";
@@ -19,7 +19,7 @@ namespace ConsoleBattleship.Screen
     public delegate void MenuDelegate(string menuItem);
     public event MenuDelegate OnSelectedMenuItem = delegate { };
 
-    public delegate void LoginDelegate(string user, string password);
+    public delegate void LoginDelegate(string user, string password, bool registering);
     public event LoginDelegate OnLoginAttempt = delegate { };
 
     private static LoginScreen s_instance = new(
@@ -220,7 +220,10 @@ namespace ConsoleBattleship.Screen
     {
       if (item == "Submit")
       {
-        OnLoginAttempt(_user, _password);
+        OnLoginAttempt(_user, _password, false);
+      } else if (item == "Register")
+      {
+        OnLoginAttempt(_user, _password, true);
       }
     }
   }
