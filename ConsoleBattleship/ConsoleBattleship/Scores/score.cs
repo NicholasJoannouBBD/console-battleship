@@ -18,7 +18,7 @@ namespace ConsoleBattleship.Score
         // isGameActive here
     }
     
-    public void IncrementPlayer1Score(int points)
+    public void incrementPlayer1Score(int points)
     {
         player1Score =+ points;
         if(this.detectWin(player1Score) == true){
@@ -26,7 +26,7 @@ namespace ConsoleBattleship.Score
         }
     }
     
-    public void IncrementPlayer2Score(int points)
+    public void incrementPlayer2Score(int points)
     {
         player2Score =+ points;
         this.detectWin(player2Score);
@@ -64,5 +64,7 @@ namespace ConsoleBattleship.Score
     public void updateLeaderboard(string winningPlayer, string loosingPlayer){
         // update db with one win, one loss
     }
+
+    // need to see where this fits in and how it is called.
 }
 }
