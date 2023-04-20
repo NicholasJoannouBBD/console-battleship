@@ -18,6 +18,10 @@ namespace ConsoleBattleship
 
             Player1.SetupShips();
             Player2.SetupShips();
+            /*
+            Player1.OutputBoards(Player1.GameBoard);
+            Player2.OutputBoards(Player2.GameBoard);
+            */
         }
     }
 }

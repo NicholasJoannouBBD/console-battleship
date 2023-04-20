@@ -11,7 +11,8 @@ namespace ConsoleBattleship.Ships
         public Submarine()
         {
             ShipName = "Submarine";
-            MaximumHits = 3;
+            Size = 3;
+            CellOccupation = CellOccupation.Submarine;
         }
     }
 }

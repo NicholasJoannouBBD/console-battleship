@@ -13,13 +13,14 @@ namespace ConsoleBattleship.Ships
         //count of the hits a ship takes
         public int Hits { get; set; }
         //maximum hits that a ship can take
-        public int MaximumHits { get; set; }
+        public int Size { get; set; }
+        public CellOccupation CellOccupation { get; set; }
 
         //check if the ship is sunken
         public bool IsSunk
         {
             //return true if the number of hit is greater than or equal to the maximum hits
-            get { return Hits >= MaximumHits; }
+            get { return Hits >= Size; }
         }
     }
 }

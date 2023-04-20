@@ -12,7 +12,8 @@ namespace ConsoleBattleship.states
     internal class StateExample : BaseState
     {
         string exampleParam;
-        
+        Game game = new Game();
+
         public override void Enter(params object[] args)
         {
             this.exampleParam = (string)args[0];
@@ -26,8 +27,8 @@ namespace ConsoleBattleship.states
         public override void Render(params object[] args)
         {
             //this is all the output to go on the screen.
-            Console.WriteLine("Updating... " + this.exampleParam);
-            Console.WriteLine("Should I exit? Y/N");
+            game.Player1.OutputBoards(game.Player1.GameBoard, game.Player1.FiringBoard);
+            game.Player2.OutputBoards(game.Player2.GameBoard, game.Player2.FiringBoard);
             if (Console.ReadLine().Equals("Y"))
             {
                 StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.SECOND, new object[] { "Now State 2" });

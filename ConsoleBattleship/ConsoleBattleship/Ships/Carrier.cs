@@ -11,7 +11,8 @@ namespace ConsoleBattleship.Ships
         public Carrier()
         {
             ShipName = "Aircraft Carrier";
-            MaximumHits = 5;
+            Size = 5;
+            CellOccupation = CellOccupation.Carrier; 
         }
     }
 }
