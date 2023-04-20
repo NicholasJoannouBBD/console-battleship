@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+ConsoleBattleship/ConsoleBattleship/Properties/launchSettings.json
