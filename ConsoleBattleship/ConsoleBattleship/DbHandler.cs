@@ -26,6 +26,56 @@ namespace ConsoleBattleship
             return output;
         }
 
+        public bool isValidUser(SQLiteConnection con, string username, string password)
+        {
+            string output = "";
+
+            string statement = $"SELECT * FROM users WHERE username =\"{username}\" AND password =\"{password}\"";
+
+            using var cmd = new SQLiteCommand(statement, con);
+
+            using SQLiteDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                output += $"{reader.GetInt32(0)}    {reader.GetString(1)}    {reader.GetInt32(2)}   {reader.GetInt32(3)}\n";
+            }
+
+            if (output.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool doesUsernameExist(SQLiteConnection con, string username)
+        {
+            string output = "";
+
+            string statement = $"SELECT * FROM users WHERE username =\"{username}\"";
+
+            using var cmd = new SQLiteCommand(statement, con);
+
+            using SQLiteDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                output += $"{reader.GetInt32(0)}    {reader.GetString(1)}    {reader.GetInt32(2)}   {reader.GetInt32(3)}\n";
+            }
+
+            if (output.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public string getUserByUsername(SQLiteConnection con, string username)
         {
             string output = "";
@@ -43,11 +93,29 @@ namespace ConsoleBattleship
             return output;
         }
 
-        public void createUser(SQLiteConnection con, string newUsername)
+        public void createUser(SQLiteConnection con, string newUsername, string newPassword)
         {
             using var cmd = new SQLiteCommand(con);
 
-            cmd.CommandText = $"INSERT INTO users(username) VALUES(\"{newUsername}\")";
+            cmd.CommandText = $"INSERT INTO users(username, password) VALUES(\"{newUsername}\",\"{newPassword}\")";
+            cmd.ExecuteNonQuery();
+        }
+
+        public void updateUserUsername(SQLiteConnection con, string oldUsername, string newUsername)
+        {
+
+            using var cmd = new SQLiteCommand(con);
+
+            cmd.CommandText = $"UPDATE users SET username = \"{newUsername}\" WHERE username = \"{oldUsername}\"";
+            cmd.ExecuteNonQuery();
+        }
+
+        public void updateUserPassword(SQLiteConnection con, string username, string newPassword)
+        {
+
+            using var cmd = new SQLiteCommand(con);
+
+            cmd.CommandText = $"UPDATE users SET password = \"{newPassword}\" WHERE username = \"{username}\"";
             cmd.ExecuteNonQuery();
         }
 
