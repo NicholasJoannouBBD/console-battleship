@@ -26,15 +26,11 @@ namespace Listener
                 string responseMessage = Helper.streamToMessage(sender.GetStream());
                 if (responseMessage != null)
                 {
-                    sendMessage(responseMessage, sender);
+                    ServerSend.sendMessage(responseMessage, sender);
                 }
             }
         }
 
-        private static void sendMessage(string message, TcpClient client)
-        {
-            byte[] bytes = Helper.messageToByteArray(message);
-            client.GetStream().Write(bytes, 0, bytes.Length);
-        }
+        
     }
 }

@@ -11,14 +11,4 @@
     {
         username = 1
     }
-
-    public static class ClientConstants
-    {
-        public const string username = "1";
-    }
-
-    public static class ServerConstants
-    {
-        public const string usernameReceived = "1";
-    }
 }
