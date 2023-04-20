@@ -87,6 +87,10 @@ namespace ConsoleBattleship.Screen
         Console.Clear();
     } 
 
+    public void Refresh()
+    {
+
+    }
 
     // HELPERS
     protected void SetCursorToBegin()

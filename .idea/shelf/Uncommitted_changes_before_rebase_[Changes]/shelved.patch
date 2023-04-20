@@ -1,0 +1,268 @@
+Index: ConsoleBattleship/ConsoleBattleship/obj/project.assets.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 3,\r\n  \"targets\": {\r\n    \"net6.0\": {}\r\n  },\r\n  \"libraries\": {},\r\n  \"projectFileDependencyGroups\": {\r\n    \"net6.0\": []\r\n  },\r\n  \"packageFolders\": {\r\n    \"C:\\\\Users\\\\artur\\\\.nuget\\\\packages\\\\\": {}\r\n  },\r\n  \"project\": {\r\n    \"version\": \"1.0.0\",\r\n    \"restore\": {\r\n      \"projectUniqueName\": \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\ConsoleBattleship.csproj\",\r\n      \"projectName\": \"ConsoleBattleship\",\r\n      \"projectPath\": \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\ConsoleBattleship.csproj\",\r\n      \"packagesPath\": \"C:\\\\Users\\\\artur\\\\.nuget\\\\packages\\\\\",\r\n      \"outputPath\": \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\obj\\\\\",\r\n      \"projectStyle\": \"PackageReference\",\r\n      \"configFilePaths\": [\r\n        \"C:\\\\Users\\\\artur\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\",\r\n        \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.Offline.config\"\r\n      ],\r\n      \"originalTargetFrameworks\": [\r\n        \"net6.0\"\r\n      ],\r\n      \"sources\": {\r\n        \"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\": {},\r\n        \"https://api.nuget.org/v3/index.json\": {}\r\n      },\r\n      \"frameworks\": {\r\n        \"net6.0\": {\r\n          \"targetAlias\": \"net6.0\",\r\n          \"projectReferences\": {}\r\n        }\r\n      },\r\n      \"warningProperties\": {\r\n        \"warnAsError\": [\r\n          \"NU1605\"\r\n        ]\r\n      }\r\n    },\r\n    \"frameworks\": {\r\n      \"net6.0\": {\r\n        \"targetAlias\": \"net6.0\",\r\n        \"imports\": [\r\n          \"net461\",\r\n          \"net462\",\r\n          \"net47\",\r\n          \"net471\",\r\n          \"net472\",\r\n          \"net48\"\r\n        ],\r\n        \"assetTargetFallback\": true,\r\n        \"warn\": true,\r\n        \"frameworkReferences\": {\r\n          \"Microsoft.NETCore.App\": {\r\n            \"privateAssets\": \"all\"\r\n          }\r\n        },\r\n        \"runtimeIdentifierGraphPath\": \"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\6.0.300\\\\RuntimeIdentifierGraph.json\"\r\n      }\r\n    }\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ConsoleBattleship/ConsoleBattleship/obj/project.assets.json b/ConsoleBattleship/ConsoleBattleship/obj/project.assets.json
+--- a/ConsoleBattleship/ConsoleBattleship/obj/project.assets.json	(revision a9fb7eedf007106917d838b9248cbfde9164e1a2)
++++ b/ConsoleBattleship/ConsoleBattleship/obj/project.assets.json	(date 1681474662320)
+@@ -1,26 +1,68 @@
+ {
+   "version": 3,
+   "targets": {
+-    "net6.0": {}
++    "net6.0": {
++      "Pastel/4.1.0": {
++        "type": "package",
++        "compile": {
++          "lib/net6.0/Pastel.dll": {
++            "related": ".xml"
++          }
++        },
++        "runtime": {
++          "lib/net6.0/Pastel.dll": {
++            "related": ".xml"
++          }
++        }
++      }
++    }
+   },
+-  "libraries": {},
++  "libraries": {
++    "Pastel/4.1.0": {
++      "sha512": "2RGTLbvDyhUyZmNIAdyJZkQTr8RJwD/l4vEvFujLRZN2uxJal1AR8STe7rJwrYESO/Waaa20eYhVd4Q3KX+Nxw==",
++      "type": "package",
++      "path": "pastel/4.1.0",
++      "files": [
++        ".nupkg.metadata",
++        ".signature.p7s",
++        "LICENSE",
++        "README.md",
++        "icon.png",
++        "lib/net462/Pastel.dll",
++        "lib/net462/Pastel.xml",
++        "lib/net6.0/Pastel.dll",
++        "lib/net6.0/Pastel.xml",
++        "lib/net7.0/Pastel.dll",
++        "lib/net7.0/Pastel.xml",
++        "pastel.4.1.0.nupkg.sha512",
++        "pastel.nuspec"
++      ]
++    }
++  },
+   "projectFileDependencyGroups": {
+-    "net6.0": []
++    "net6.0": [
++      "Pastel >= 4.1.0"
++    ]
+   },
+   "packageFolders": {
+-    "C:\\Users\\artur\\.nuget\\packages\\": {}
++    "C:\\Users\\bbdnet2841\\.nuget\\packages\\": {},
++    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+   },
+   "project": {
+     "version": "1.0.0",
+     "restore": {
+-      "projectUniqueName": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
++      "projectUniqueName": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+       "projectName": "ConsoleBattleship",
+-      "projectPath": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+-      "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
+-      "outputPath": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
++      "projectPath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
++      "packagesPath": "C:\\Users\\bbdnet2841\\.nuget\\packages\\",
++      "outputPath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
+       "projectStyle": "PackageReference",
++      "fallbackFolders": [
++        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
++      ],
+       "configFilePaths": [
+-        "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config",
++        "C:\\Users\\bbdnet2841\\AppData\\Roaming\\NuGet\\NuGet.Config",
++        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+       ],
+       "originalTargetFrameworks": [
+@@ -28,7 +70,13 @@
+       ],
+       "sources": {
+         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+-        "https://api.nuget.org/v3/index.json": {}
++        "C:\\Program Files\\dotnet\\library-packs": {},
++        "https://api.nuget.org/v3/index.json": {},
++        "https://nexus.bbdsoftware.com/repository/nuget-sars-dev/": {},
++        "https://nexus.bbdsoftware.com/repository/nuget-sars/": {},
++        "https://nexus.bbdsoftware.com/repository/nuget-vanguard-dev/": {},
++        "https://nexus.bbdsoftware.com/repository/nuget-vanguard/": {},
++        "https://nexus.bbdsoftware.com/repository/vanguard-nuget/": {}
+       },
+       "frameworks": {
+         "net6.0": {
+@@ -45,13 +93,20 @@
+     "frameworks": {
+       "net6.0": {
+         "targetAlias": "net6.0",
++        "dependencies": {
++          "Pastel": {
++            "target": "Package",
++            "version": "[4.1.0, )"
++          }
++        },
+         "imports": [
+           "net461",
+           "net462",
+           "net47",
+           "net471",
+           "net472",
+-          "net48"
++          "net48",
++          "net481"
+         ],
+         "assetTargetFallback": true,
+         "warn": true,
+@@ -60,7 +115,7 @@
+             "privateAssets": "all"
+           }
+         },
+-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
++        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+       }
+     }
+   }
+Index: ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"format\": 1,\r\n  \"restore\": {\r\n    \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\ConsoleBattleship.csproj\": {}\r\n  },\r\n  \"projects\": {\r\n    \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\ConsoleBattleship.csproj\": {\r\n      \"version\": \"1.0.0\",\r\n      \"restore\": {\r\n        \"projectUniqueName\": \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\ConsoleBattleship.csproj\",\r\n        \"projectName\": \"ConsoleBattleship\",\r\n        \"projectPath\": \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\ConsoleBattleship.csproj\",\r\n        \"packagesPath\": \"C:\\\\Users\\\\artur\\\\.nuget\\\\packages\\\\\",\r\n        \"outputPath\": \"D:\\\\Documents\\\\..BB_GRAD\\\\console-battleship\\\\ConsoleBattleship\\\\ConsoleBattleship\\\\obj\\\\\",\r\n        \"projectStyle\": \"PackageReference\",\r\n        \"configFilePaths\": [\r\n          \"C:\\\\Users\\\\artur\\\\AppData\\\\Roaming\\\\NuGet\\\\NuGet.Config\",\r\n          \"C:\\\\Program Files (x86)\\\\NuGet\\\\Config\\\\Microsoft.VisualStudio.Offline.config\"\r\n        ],\r\n        \"originalTargetFrameworks\": [\r\n          \"net6.0\"\r\n        ],\r\n        \"sources\": {\r\n          \"C:\\\\Program Files (x86)\\\\Microsoft SDKs\\\\NuGetPackages\\\\\": {},\r\n          \"https://api.nuget.org/v3/index.json\": {}\r\n        },\r\n        \"frameworks\": {\r\n          \"net6.0\": {\r\n            \"targetAlias\": \"net6.0\",\r\n            \"projectReferences\": {}\r\n          }\r\n        },\r\n        \"warningProperties\": {\r\n          \"warnAsError\": [\r\n            \"NU1605\"\r\n          ]\r\n        }\r\n      },\r\n      \"frameworks\": {\r\n        \"net6.0\": {\r\n          \"targetAlias\": \"net6.0\",\r\n          \"imports\": [\r\n            \"net461\",\r\n            \"net462\",\r\n            \"net47\",\r\n            \"net471\",\r\n            \"net472\",\r\n            \"net48\"\r\n          ],\r\n          \"assetTargetFallback\": true,\r\n          \"warn\": true,\r\n          \"frameworkReferences\": {\r\n            \"Microsoft.NETCore.App\": {\r\n              \"privateAssets\": \"all\"\r\n            }\r\n          },\r\n          \"runtimeIdentifierGraphPath\": \"C:\\\\Program Files\\\\dotnet\\\\sdk\\\\6.0.300\\\\RuntimeIdentifierGraph.json\"\r\n        }\r\n      }\r\n    }\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json b/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json
+--- a/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json	(revision a9fb7eedf007106917d838b9248cbfde9164e1a2)
++++ b/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json	(date 1681474662323)
+@@ -1,20 +1,24 @@
+ {
+   "format": 1,
+   "restore": {
+-    "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj": {}
++    "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj": {}
+   },
+   "projects": {
+-    "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj": {
++    "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj": {
+       "version": "1.0.0",
+       "restore": {
+-        "projectUniqueName": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
++        "projectUniqueName": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+         "projectName": "ConsoleBattleship",
+-        "projectPath": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+-        "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
+-        "outputPath": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
++        "projectPath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
++        "packagesPath": "C:\\Users\\bbdnet2841\\.nuget\\packages\\",
++        "outputPath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
+         "projectStyle": "PackageReference",
++        "fallbackFolders": [
++          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
++        ],
+         "configFilePaths": [
+-          "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config",
++          "C:\\Users\\bbdnet2841\\AppData\\Roaming\\NuGet\\NuGet.Config",
++          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+         ],
+         "originalTargetFrameworks": [
+@@ -22,7 +26,13 @@
+         ],
+         "sources": {
+           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+-          "https://api.nuget.org/v3/index.json": {}
++          "C:\\Program Files\\dotnet\\library-packs": {},
++          "https://api.nuget.org/v3/index.json": {},
++          "https://nexus.bbdsoftware.com/repository/nuget-sars-dev/": {},
++          "https://nexus.bbdsoftware.com/repository/nuget-sars/": {},
++          "https://nexus.bbdsoftware.com/repository/nuget-vanguard-dev/": {},
++          "https://nexus.bbdsoftware.com/repository/nuget-vanguard/": {},
++          "https://nexus.bbdsoftware.com/repository/vanguard-nuget/": {}
+         },
+         "frameworks": {
+           "net6.0": {
+@@ -39,13 +49,20 @@
+       "frameworks": {
+         "net6.0": {
+           "targetAlias": "net6.0",
++          "dependencies": {
++            "Pastel": {
++              "target": "Package",
++              "version": "[4.1.0, )"
++            }
++          },
+           "imports": [
+             "net461",
+             "net462",
+             "net47",
+             "net471",
+             "net472",
+-            "net48"
++            "net48",
++            "net481"
+           ],
+           "assetTargetFallback": true,
+           "warn": true,
+@@ -54,7 +71,7 @@
+               "privateAssets": "all"
+             }
+           },
+-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
++          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+         }
+       }
+     }
+Index: ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>is_global = true\r\nbuild_property.TargetFramework = net6.0\r\nbuild_property.TargetPlatformMinVersion = \r\nbuild_property.UsingMicrosoftNETSdkWeb = \r\nbuild_property.ProjectTypeGuids = \r\nbuild_property.InvariantGlobalization = \r\nbuild_property.PlatformNeutralAssembly = \r\nbuild_property._SupportedPlatformList = Linux,macOS,Windows\r\nbuild_property.RootNamespace = ConsoleBattleship\r\nbuild_property.ProjectDir = D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig b/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
+--- a/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig	(revision a9fb7eedf007106917d838b9248cbfde9164e1a2)
++++ b/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig	(date 1681474662247)
+@@ -5,6 +5,7 @@
+ build_property.ProjectTypeGuids = 
+ build_property.InvariantGlobalization = 
+ build_property.PlatformNeutralAssembly = 
++build_property.EnforceExtendedAnalyzerRules = 
+ build_property._SupportedPlatformList = Linux,macOS,Windows
+ build_property.RootNamespace = ConsoleBattleship
+-build_property.ProjectDir = D:\Documents\..BB_GRAD\console-battleship\ConsoleBattleship\ConsoleBattleship\
++build_property.ProjectDir = C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\
+Index: ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>\r\n<Project ToolsVersion=\"14.0\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup Condition=\" '$(ExcludeRestorePackageImports)' != 'true' \">\r\n    <RestoreSuccess Condition=\" '$(RestoreSuccess)' == '' \">True</RestoreSuccess>\r\n    <RestoreTool Condition=\" '$(RestoreTool)' == '' \">NuGet</RestoreTool>\r\n    <ProjectAssetsFile Condition=\" '$(ProjectAssetsFile)' == '' \">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>\r\n    <NuGetPackageRoot Condition=\" '$(NuGetPackageRoot)' == '' \">$(UserProfile)\\.nuget\\packages\\</NuGetPackageRoot>\r\n    <NuGetPackageFolders Condition=\" '$(NuGetPackageFolders)' == '' \">C:\\Users\\artur\\.nuget\\packages\\</NuGetPackageFolders>\r\n    <NuGetProjectStyle Condition=\" '$(NuGetProjectStyle)' == '' \">PackageReference</NuGetProjectStyle>\r\n    <NuGetToolVersion Condition=\" '$(NuGetToolVersion)' == '' \">6.2.0</NuGetToolVersion>\r\n  </PropertyGroup>\r\n  <ItemGroup Condition=\" '$(ExcludeRestorePackageImports)' != 'true' \">\r\n    <SourceRoot Include=\"C:\\Users\\artur\\.nuget\\packages\\\" />\r\n  </ItemGroup>\r\n</Project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props b/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props
+--- a/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props	(revision a9fb7eedf007106917d838b9248cbfde9164e1a2)
++++ b/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props	(date 1681474662318)
+@@ -5,11 +5,12 @@
+     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\artur\.nuget\packages\</NuGetPackageFolders>
++    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\bbdnet2841\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.2.0</NuGetToolVersion>
++    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.5.0</NuGetToolVersion>
+   </PropertyGroup>
+   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+-    <SourceRoot Include="C:\Users\artur\.nuget\packages\" />
++    <SourceRoot Include="C:\Users\bbdnet2841\.nuget\packages\" />
++    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+   </ItemGroup>
+ </Project>
+\ No newline at end of file
