@@ -16,7 +16,7 @@ namespace ConsoleBattleship.states
           {
             //If login true:
               screen.Stop();
-              StateMachine.StateMachineInstance.ChangeState(StateMachine.GAMESETUP);
+              StateMachine.StateMachineInstance.ChangeState(StateMachine.MENU);
           };
           screen.Start();
         }
