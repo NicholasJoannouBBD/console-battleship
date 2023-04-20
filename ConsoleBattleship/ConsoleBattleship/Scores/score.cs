@@ -12,6 +12,13 @@ namespace ConsoleBattleship.Score
     private int player1Score;
     private int player2Score;
     public bool isGameActive;
+    public string user1Name;
+    public string user2Name;
+    public string winningUsername;
+    public string loosingUsername;
+
+
+    public DbHandler database;
     
     public Score()
     {
@@ -23,16 +30,20 @@ namespace ConsoleBattleship.Score
     public void incrementPlayer1Score(int points)
     {
         player1Score =+ points;
-        if(this.detectWin(player1Score) == true){
-            // updateLeaderboard();
+        if(detectWin(player1Score) == true){
+            winningUsername = user1Name;
+            loosingUsername = user2Name;
+            updateDatabase(winningUsername, loosingUsername);
         }
     }
     
     public void incrementPlayer2Score(int points)
     {
         player2Score =+ points;
-        if(this.detectWin(player1Score) == true){
-            // updateLeaderboard();
+        if(detectWin(player1Score) == true){
+            winningUsername = user2Name;
+            loosingUsername = user1Name;
+            updateDatabase(winningUsername, loosingUsername);
         }
     }
     
@@ -50,7 +61,7 @@ namespace ConsoleBattleship.Score
     {
         player1Score = 0;
         player2Score = 0;
-        // game should be actuve when played, and be not when it ends or no game ic played. 
+        // game should be actuve when played, and be not when it ends or no game is played. 
         // This means isGameActive would need to be updated extenally when a new game is being set up.
         isGameActive = true;
     }
@@ -69,8 +80,13 @@ namespace ConsoleBattleship.Score
         Console.WriteLine("Player 1 score: " + player1Score + " | Player 2 score: " + player2Score);
     }
 
-    public void updateLeaderboard(string winningPlayer, string loosingPlayer){
-        // update db with one win, one loss
+    private void updateDatabase(string winningUsername, string loosingUsername){
+        database.updateUserWins(SQLiteConnection, winningUsername);
+        database.updateUserLosses(SQLiteConnection, loosingUsername);
+    }
+
+    public string diaplyLeaderboard(){
+        Console.WriteLine(database.getLeaderboard);
     }
 
 }
