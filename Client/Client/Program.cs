@@ -7,8 +7,16 @@ namespace Client
 {
     public class Program
     {
+        public static int playerID;
         static void Main(string[] args)
         {
+            playerID = ClientSend.Connect();
+            Console.WriteLine(playerID);
+
+            string resp = ClientSend.Disconnect();
+            Console.WriteLine(resp);
+
+
             while (true)
             {
                 string response;
@@ -19,11 +27,11 @@ namespace Client
 
                 Console.Write("X coords : ");
                 string x = Console.ReadLine();
-                Console.Write("Y coords : ");
-                string y = Console.ReadLine();
-
                 response = ClientSend.SendX(x);
                 Console.WriteLine(response);
+
+                Console.Write("Y coords : ");
+                string y = Console.ReadLine();
                 response = ClientSend.SendY(y);
                 Console.WriteLine(response);
             }

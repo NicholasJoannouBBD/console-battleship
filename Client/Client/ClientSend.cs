@@ -45,5 +45,16 @@ namespace Client
         {
             return sendMessage((int)ClientPackets.yCoords, _y);
         }
+
+        // Connect
+        public static int Connect()
+        {
+            return int.Parse(sendMessage((int)ClientPackets.connect, "0"));
+        }
+
+        public static string Disconnect()
+        {
+            return sendMessage((int)ClientPackets.disconnect, "0");
+        }
     }
 }

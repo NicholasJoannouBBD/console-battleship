@@ -8,10 +8,12 @@ namespace Listener
 {
     public class Program
     {
+        public static bool player1Connected = false;
+        public static bool player2Connected = false;
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Server starting !");
+            Console.WriteLine("Server starting!");
             IPAddress ipAddr = IPAddress.Loopback;
             int port = 8888;
             IPEndPoint ep = new IPEndPoint(ipAddr, port);

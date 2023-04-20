@@ -53,5 +53,43 @@ namespace Listener
             Console.WriteLine($"Player shot {x}, {y}");
             return $"Player shot {x}, {y}";
         }
+
+        public static string ClientConnected(string message)
+        {
+            if (!Program.player1Connected)
+            {
+                Program.player1Connected = true;
+                Console.WriteLine("Player 1 connected");
+                return "1";
+            }
+            else if (!Program.player2Connected)
+            {
+                Program.player2Connected = true;
+                Console.WriteLine("Player 2 connected");
+                return "2";
+            }
+            else
+            {
+                return "-1";
+            }
+        }
+
+        public static string ClientDisconnected(string playerID)
+        {
+            if (playerID == "1")
+            {
+                Program.player1Connected = false;
+                Console.WriteLine("Player 1 disconnected");
+                return "Disconnected";
+            }
+            else if (!Program.player2Connected)
+            {
+                Program.player2Connected = false;
+                Console.WriteLine("Player 2 disconnected");
+                return "Disconnected";
+            }
+
+            return "Player was never connected";
+        }
     }
 }

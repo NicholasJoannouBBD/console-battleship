@@ -42,6 +42,10 @@ namespace Listener
                     return ServerSend.xCoordsReceived(message);
                 case (int)ClientPackets.yCoords:
                     return ServerSend.yCoordsReceived(message);
+                case (int)ClientPackets.connect:
+                    return ServerSend.ClientConnected(message);
+                case (int)ClientPackets.disconnect:
+                    return ServerSend.ClientDisconnected(message);
                 default:
                     return "Unknown packet";
             }

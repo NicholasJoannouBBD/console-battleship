@@ -11,6 +11,8 @@
     {
         username = 1,
         xCoords = 2,
-        yCoords = 3
+        yCoords = 3,
+        connect = 4,
+        disconnect = 5
     }
 }
