@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\artur\\.nuget\\packages\\": {}
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+      "projectUniqueName": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
       "projectName": "ConsoleBattleship",
-      "projectPath": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
-      "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\..BB_GRAD\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
+      "projectPath": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+      "packagesPath": "C:\\Users\\bbdnet2741\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bbdnet2741\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
