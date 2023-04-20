@@ -42,12 +42,12 @@
             "assetType": "native",
             "fileVersion": "1.0.117.0"
           }
-      }
+        }
       },
       "System.Data.SQLite.Core/1.0.117": {
         "dependencies": {
           "Stub.System.Data.SQLite.Core.NetStandard": "1.0.117"
-    }
+        }
       }
     }
   },
