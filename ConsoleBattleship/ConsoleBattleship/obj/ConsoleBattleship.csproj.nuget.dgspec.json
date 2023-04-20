@@ -47,6 +47,10 @@
             "System.Data.SQLite.COre": {
               "target": "Package",
               "version": "[1.0.117, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
