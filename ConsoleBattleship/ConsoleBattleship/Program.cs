@@ -1,6 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-using ConsoleBattleship.states;
 using ConsoleBattleship;
+using ConsoleBattleship.Screen;
+using ConsoleBattleship.states;
 using System.Data.SQLite;
 
 DbHandler dbHandler = new DbHandler();
@@ -10,7 +10,7 @@ using var connection = new SQLiteConnection(url);
 connection.Open();
 
 
-StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.EXAMPLE, new object[] { "123" });
+StateMachine.StateMachineInstance.ChangeState(StateMachine.MENU, new object[] {});
 
 //temporary infinite loop
 while (true)

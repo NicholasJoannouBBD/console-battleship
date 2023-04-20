@@ -31,7 +31,7 @@ namespace ConsoleBattleship.states
             game.Player2.OutputBoards(game.Player2.GameBoard, game.Player2.FiringBoard);
             if (Console.ReadLine().Equals("Y"))
             {
-                StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.SECOND, new object[] { "Now State 2" });
+                StateMachine.StateMachineInstance.ChangeState(StateMachine.SECOND, new object[] { "Now State 2" });
             }
         }
 
