@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleBattleship.Score;
+using ConsoleBattleship;
 
 
 namespace ConsoleBattleship.states
@@ -22,10 +22,8 @@ namespace ConsoleBattleship.states
 
         public override void Render(params object[] args)
         {
-            // check if correct
-            //Score thingy = new Score();
-
-
+            Score thingy = new Score();
+            thingy.displayLeaderboard();
         }
 
         public override void Update(params object[] args)
