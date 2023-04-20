@@ -4,69 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using System.Data.Common;
-using System.Data;
 
 namespace ConsoleBattleship
 {
     internal class DbHandler
     {
-
-        private static DbHandler DBinstance = null;
-        private static readonly object locker = new object(); //thread locker
-
-
-        static string url = @"URI=file:battleship.db";
-        SQLiteConnection connection = new SQLiteConnection(url);
-
-        DbHandler()
-        {
-
-        }
-
-        public static DbHandler Instance
-        {
-            get
-            {
-                if (DBinstance == null)
-                {
-                    lock (locker)
-                    {
-                        if (DBinstance == null)
-                        {
-                            DBinstance = new DbHandler();
-                        }
-                    }
-                }
-                return DBinstance;
-            }
-        }
-        public string getAllUsers()
+        public string getAllUsers(SQLiteConnection con)
         {
             string output = "";
 
             string statement = "SELECT * FROM users";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
+
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
                 output += $"{reader.GetInt32(0)}    {reader.GetString(1)}   {reader.GetInt32(2)}    {reader.GetInt32(3)}\n";
             }
-            connection.Close();
             return output;
         }
 
-        public bool isValidUser(string username, string password)
+        public bool isValidUser(SQLiteConnection con, string username, string password)
         {
             string output = "";
 
             string statement = $"SELECT * FROM users WHERE username =\"{username}\" AND password =\"{password}\"";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -74,8 +40,6 @@ namespace ConsoleBattleship
             {
                 output += $"{reader.GetInt32(0)}    {reader.GetString(1)}    {reader.GetInt32(2)}   {reader.GetInt32(3)}\n";
             }
-
-            connection.Close();
 
             if (output.Length > 0)
             {
@@ -87,14 +51,13 @@ namespace ConsoleBattleship
             }
         }
 
-        public bool doesUsernameExist(string username)
+        public bool doesUsernameExist(SQLiteConnection con, string username)
         {
             string output = "";
 
             string statement = $"SELECT * FROM users WHERE username =\"{username}\"";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -102,7 +65,6 @@ namespace ConsoleBattleship
             {
                 output += $"{reader.GetInt32(0)}    {reader.GetString(1)}    {reader.GetInt32(2)}   {reader.GetInt32(3)}\n";
             }
-            connection.Close();
 
             if (output.Length > 0)
             {
@@ -114,14 +76,13 @@ namespace ConsoleBattleship
             }
         }
 
-        public string getUserByUsername(string username)
+        public string getUserByUsername(SQLiteConnection con, string username)
         {
             string output = "";
 
             string statement = $"SELECT * FROM users WHERE username =\"{username}\"";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -129,51 +90,40 @@ namespace ConsoleBattleship
             {
                 output += $"{reader.GetInt32(0)}    {reader.GetString(1)}    {reader.GetInt32(2)}   {reader.GetInt32(3)}\n";
             }
-            connection.Close();
             return output;
         }
 
-        public void createUser(string newUsername, string newPassword)
+        public void createUser(SQLiteConnection con, string newUsername, string newPassword)
         {
-            using var cmd = new SQLiteCommand(connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(con);
 
             cmd.CommandText = $"INSERT INTO users(username, password) VALUES(\"{newUsername}\",\"{newPassword}\")";
             cmd.ExecuteNonQuery();
-
-            connection.Close();
         }
 
-        public void updateUserUsername(string oldUsername, string newUsername)
+        public void updateUserUsername(SQLiteConnection con, string oldUsername, string newUsername)
         {
 
-            using var cmd = new SQLiteCommand(connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(con);
 
             cmd.CommandText = $"UPDATE users SET username = \"{newUsername}\" WHERE username = \"{oldUsername}\"";
             cmd.ExecuteNonQuery();
-
-            connection.Close();
         }
 
-        public void updateUserPassword(string username, string newPassword)
+        public void updateUserPassword(SQLiteConnection con, string username, string newPassword)
         {
 
-            using var cmd = new SQLiteCommand(connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(con);
 
             cmd.CommandText = $"UPDATE users SET password = \"{newPassword}\" WHERE username = \"{username}\"";
             cmd.ExecuteNonQuery();
-
-            connection.Close();
         }
 
-        public void updateUserWins(string username)
+        public void updateUserWins(SQLiteConnection con, string username)
         {
             string getWins = $"SELECT wins FROM users WHERE username = \"{username}\"";
 
-            using var cmd = new SQLiteCommand(getWins, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(getWins, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -184,20 +134,17 @@ namespace ConsoleBattleship
                 wins = reader.GetInt32(0);
             }
 
-            using var cmdTwo = new SQLiteCommand(connection);
+            using var cmdTwo = new SQLiteCommand(con);
 
             cmdTwo.CommandText = $"UPDATE users SET wins = ({wins}+1) WHERE username = \"{username}\"";
             cmdTwo.ExecuteNonQuery();
-
-            connection.Close();
         }
 
-        public void updateUserLosses(string username)
+        public void updateUserLosses(SQLiteConnection con, string username)
         {
             string getLosses = $"SELECT losses FROM users WHERE username = \"{username}\"";
 
-            using var cmd = new SQLiteCommand(getLosses, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(getLosses, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -208,22 +155,19 @@ namespace ConsoleBattleship
                 losses = reader.GetInt32(0);
             }
 
-            using var cmdTwo = new SQLiteCommand(connection);
+            using var cmdTwo = new SQLiteCommand(con);
 
             cmdTwo.CommandText = $"UPDATE users SET losses = ({losses}+1) WHERE username = \"{username}\"";
             cmdTwo.ExecuteNonQuery();
-
-            connection.Close();
         }
 
-        public void createGame(string playerOneUsername, string playerTwoUsername, int playerOneScore, int playerTwoScore)
+        public void createGame(SQLiteConnection con, string playerOneUsername, string playerTwoUsername, int playerOneScore, int playerTwoScore)
         {
             int previousId = 0;
 
             string statement = "SELECT game_id FROM games ORDER BY game_id DESC LIMIT 1";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -234,28 +178,25 @@ namespace ConsoleBattleship
 
             int newId = previousId + 1;
 
-            string playerOneUserId = getUserByUsername(playerOneUsername);
-            string playerTwoUserId = getUserByUsername(playerTwoUsername);
+            string playerOneUserId = getUserByUsername(con, playerOneUsername);
+            string playerTwoUserId = getUserByUsername(con, playerTwoUsername);
             playerOneUserId = playerOneUserId.Substring(0, playerOneUserId.IndexOf(" "));
             playerTwoUserId = playerTwoUserId.Substring(0, playerTwoUserId.IndexOf(" "));
 
-            using var cmdTwo = new SQLiteCommand(connection);
+            using var cmdTwo = new SQLiteCommand(con);
 
             cmdTwo.CommandText = $"INSERT INTO games(game_id,user_id,score) VALUES({newId},{playerOneUserId},{playerOneScore}),({newId},{playerTwoUserId},{playerTwoScore})";
             cmdTwo.ExecuteNonQuery();
 
-            connection.Close();
-
         }
 
-        public string getAllGames()
+        public string getAllGames(SQLiteConnection con)
         {
             string output = "";
 
             string statement = "SELECT * FROM games";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -263,11 +204,10 @@ namespace ConsoleBattleship
             {
                 output += $"{reader.GetInt32(0)}    {reader.GetInt32(1)}    {reader.GetInt32(2)}\n";
             }
-            connection.Close();
             return output;
         }
 
-        public string getLeaderboard()
+        public string getLeaderboard(SQLiteConnection con)
         {
             string output = "Top 10 Leaderboard:\n";
 
@@ -278,8 +218,7 @@ namespace ConsoleBattleship
                 "ORDER BY games.score DESC " +
                 "LIMIT 10";
 
-            using var cmd = new SQLiteCommand(statement, connection);
-            connection.Open();
+            using var cmd = new SQLiteCommand(statement, con);
 
             using SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -287,8 +226,6 @@ namespace ConsoleBattleship
             {
                 output += $"{reader.GetString(0)}    {reader.GetInt32(1)}\n";
             }
-
-            connection.Close();
             return output;
         }
     }

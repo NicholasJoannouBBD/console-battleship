@@ -30,7 +30,7 @@ namespace ConsoleBattleship.states
             Console.WriteLine("Should I exit? Y/N");
             if (Console.ReadLine().Equals("Y"))
             {
-                StateMachine.StateMachineInstance.ChangeState(StateMachine.SECOND, new object[] { "Now State 2" });
+                StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.SECOND, new object[] { "Now State 2" });
             }
         }
 

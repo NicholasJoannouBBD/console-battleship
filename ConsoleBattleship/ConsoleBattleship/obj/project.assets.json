@@ -115,58 +115,25 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "/Users/xander/.nuget/packages/": {}
-=======
-    "C:\\Users\\bbdnet2841\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> main
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/ConsoleBattleship.csproj",
       "projectName": "ConsoleBattleship",
       "projectPath": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/ConsoleBattleship.csproj",
       "packagesPath": "/Users/xander/.nuget/packages/",
       "outputPath": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/obj/",
-=======
-      "projectUniqueName": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
-      "projectName": "ConsoleBattleship",
-      "projectPath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
-      "packagesPath": "C:\\Users\\bbdnet2841\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
->>>>>>> main
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-<<<<<<< HEAD
         "/Users/xander/.nuget/NuGet/NuGet.Config"
-=======
-        "C:\\Users\\bbdnet2841\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> main
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-<<<<<<< HEAD
         "https://api.nuget.org/v3/index.json": {}
-=======
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nexus.bbdsoftware.com/repository/nuget-sars-dev/": {},
-        "https://nexus.bbdsoftware.com/repository/nuget-sars/": {},
-        "https://nexus.bbdsoftware.com/repository/nuget-vanguard-dev/": {},
-        "https://nexus.bbdsoftware.com/repository/nuget-vanguard/": {},
-        "https://nexus.bbdsoftware.com/repository/vanguard-nuget/": {}
->>>>>>> main
       },
       "frameworks": {
         "net6.0": {
@@ -209,11 +176,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
->>>>>>> main
       }
     }
   }
