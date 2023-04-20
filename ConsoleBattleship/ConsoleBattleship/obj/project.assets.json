@@ -200,6 +200,26 @@
     }
   },
   "libraries": {
+    "Pastel/4.1.0": {
+      "sha512": "2RGTLbvDyhUyZmNIAdyJZkQTr8RJwD/l4vEvFujLRZN2uxJal1AR8STe7rJwrYESO/Waaa20eYhVd4Q3KX+Nxw==",
+      "type": "package",
+      "path": "pastel/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "icon.png",
+        "lib/net462/Pastel.dll",
+        "lib/net462/Pastel.xml",
+        "lib/net6.0/Pastel.dll",
+        "lib/net6.0/Pastel.xml",
+        "lib/net7.0/Pastel.dll",
+        "lib/net7.0/Pastel.xml",
+        "pastel.4.1.0.nupkg.sha512",
+        "pastel.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -569,6 +589,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Pastel >= 4.1.0",
+      "System.Data.SQLite.COre >= 1.0.117"
+      "Pastel >= 4.1.0",
       "System.Data.SQLite.COre >= 1.0.117",
       "System.Data.SqlClient >= 4.8.5"
     ]
@@ -585,6 +607,9 @@
       "packagesPath": "C:\\Users\\bbdnet2741\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\bbdnet2741\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -594,7 +619,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nexus.bbdsoftware.com/repository/nuget-sars-dev/": {},
+        "https://nexus.bbdsoftware.com/repository/nuget-sars/": {},
+        "https://nexus.bbdsoftware.com/repository/nuget-vanguard-dev/": {},
+        "https://nexus.bbdsoftware.com/repository/nuget-vanguard/": {},
+        "https://nexus.bbdsoftware.com/repository/vanguard-nuget/": {}
       },
       "frameworks": {
         "net6.0": {
@@ -641,7 +672,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

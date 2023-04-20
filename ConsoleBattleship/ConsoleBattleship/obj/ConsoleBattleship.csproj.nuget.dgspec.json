@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\bbdnet2741\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\bbdnet2741\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -22,7 +25,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nexus.bbdsoftware.com/repository/nuget-sars-dev/": {},
+          "https://nexus.bbdsoftware.com/repository/nuget-sars/": {},
+          "https://nexus.bbdsoftware.com/repository/nuget-vanguard-dev/": {},
+          "https://nexus.bbdsoftware.com/repository/nuget-vanguard/": {},
+          "https://nexus.bbdsoftware.com/repository/vanguard-nuget/": {}
         },
         "frameworks": {
           "net6.0": {
@@ -69,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

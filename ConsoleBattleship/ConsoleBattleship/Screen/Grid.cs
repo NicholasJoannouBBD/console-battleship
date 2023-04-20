@@ -1,4 +1,4 @@
-﻿namespace ConsoleBattleship
+﻿namespace ConsoleBattleship.Screen
 {
   public class Grid
   {
