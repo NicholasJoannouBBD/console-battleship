@@ -51,6 +51,30 @@ namespace ConsoleBattleship
             }
         }
 
+        public bool doesUsernameExist(SQLiteConnection con, string username)
+        {
+            string output = "";
+
+            string statement = $"SELECT * FROM users WHERE username =\"{username}\"";
+
+            using var cmd = new SQLiteCommand(statement, con);
+
+            using SQLiteDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                output += $"{reader.GetInt32(0)}    {reader.GetString(1)}    {reader.GetInt32(2)}   {reader.GetInt32(3)}\n";
+            }
+
+            if (output.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public string getUserByUsername(SQLiteConnection con, string username)
         {
