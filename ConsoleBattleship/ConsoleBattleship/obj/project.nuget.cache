@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ZeeQEPtd9b4sLZ3Zt8NYiXfKom2C5nVV3MR9+CbMPrKBTHxGBgqU3P/m1QNpu220cL2GinD8u0mRKuDWkGUOiw==",
+  "dgSpecHash": "I94TQsKBLOQn6kDzJnDfAkMkmL9SnWM80cY0uWqZevLVEG0BHtQeIictgqlz1X2KjWdtFlYoQtuAt5eECDz8Kg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bbdnet2759\\Desktop\\GradWork\\Level Ups\\C#\\Project\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+  "projectFilePath": "C:\\Users\\bbdnet2841\\_Code\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512"
+    "C:\\Users\\bbdnet2841\\.nuget\\packages\\pastel\\4.1.0\\pastel.4.1.0.nupkg.sha512",
+    "C:\\Users\\bbdnet2841\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
+    "C:\\Users\\bbdnet2841\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512"
   ],
   "logs": []
 }

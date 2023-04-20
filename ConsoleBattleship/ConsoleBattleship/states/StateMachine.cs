@@ -43,8 +43,8 @@ namespace ConsoleBattleship.states
         #endregion
 
         #region Properties
-        public string EXAMPLE => _EXAMPLE;
-        public string SECOND => _SECOND;
+        public static string EXAMPLE => _EXAMPLE;
+        public static string SECOND => _SECOND;
         public static string LOGIN => _LOGIN;
 
         public static string CREATEACCOUNT => _CREATEACCOUNT;
