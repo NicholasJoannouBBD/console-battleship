@@ -183,11 +183,34 @@ namespace ConsoleBattleship.Screen
       {
         if (MenuItems[_selectedItem] == "User")
         {
-          _user += key.KeyChar;
+          if (_user.Length < _width - s_padding * 2 - 17)
+          {
+            _user += key.KeyChar;
+          }
         }
         if (MenuItems[_selectedItem] == "Password")
         {
-          _password += key.KeyChar;
+          if (_password.Length < _width - s_padding * 2 - 17)
+          {
+            _password += key.KeyChar;
+          }
+        }
+      }
+      if (key.Key == ConsoleKey.Backspace)
+      {
+        if (MenuItems[_selectedItem] == "User")
+        {
+          if (_user.Length > 0)
+          {
+            _user = _user.Remove(_user.Length - 1);
+          }
+        }
+        if (MenuItems[_selectedItem] == "Password")
+        {
+          if (_password.Length > 0)
+          {
+            _password = _password.Remove(_password.Length - 1);
+          }
         }
       }
     }

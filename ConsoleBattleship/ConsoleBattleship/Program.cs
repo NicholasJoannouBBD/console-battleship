@@ -1,9 +1,8 @@
 using ConsoleBattleship;
-using ConsoleBattleship.Screen;
 using ConsoleBattleship.states;
 using System.Data.SQLite;
 
-DbHandler dbHandler = new DbHandler();
+DbHandler dbHandler = DbHandler.Instance;
 
 string url = @"URI=file:battleship.db";
 using var connection = new SQLiteConnection(url);
