@@ -18,6 +18,7 @@ namespace ConsoleBattleship.states
 
         public override void Exit(params object[] args)
         {
+            Console.Clear();
             c1.Exit();
         }
 

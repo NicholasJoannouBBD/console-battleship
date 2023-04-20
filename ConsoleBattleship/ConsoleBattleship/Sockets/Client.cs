@@ -21,6 +21,7 @@ namespace ConsoleBattleship.Sockets
             this.networkStream = clientSocket.GetStream();
             this.reader = new StreamReader(networkStream);
             this.writer = new StreamWriter(networkStream);
+            networkStream.Flush();
         }
         public string ListenerClient()
         {
@@ -29,7 +30,7 @@ namespace ConsoleBattleship.Sockets
                 
                 if(clientSocket != null)
                 {
-                    string response = reader.ReadLine();
+                    string response = reader?.ReadLine() ?? "";
                     if (response.Contains("Ready"))
                     {
                         //change state to the game setup
