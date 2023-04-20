@@ -38,6 +38,10 @@ namespace Listener
             {
                 case (int)ClientPackets.username:
                     return ServerSend.UsernameReceived(message);
+                case (int)ClientPackets.xCoords:
+                    return ServerSend.xCoordsReceived(message);
+                case (int)ClientPackets.yCoords:
+                    return ServerSend.yCoordsReceived(message);
                 default:
                     return "Unknown packet";
             }

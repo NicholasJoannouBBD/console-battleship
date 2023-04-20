@@ -11,9 +11,20 @@ namespace Client
         {
             while (true)
             {
-                Console.Write("\nProcess message : ");
+                string response;
+                Console.Write("\nUsername : ");
                 string requestMessage = Console.ReadLine();
-                string response = ClientSend.Username(requestMessage);
+                response = ClientSend.Username(requestMessage);
+                Console.WriteLine(response);
+
+                Console.Write("X coords : ");
+                string x = Console.ReadLine();
+                Console.Write("Y coords : ");
+                string y = Console.ReadLine();
+
+                response = ClientSend.SendX(x);
+                Console.WriteLine(response);
+                response = ClientSend.SendY(y);
                 Console.WriteLine(response);
             }
         }

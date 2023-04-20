@@ -34,5 +34,16 @@ namespace Client
         {
             return sendMessage((int)ClientPackets.username, _username);
         }
+
+        // Send coords packets
+        public static string SendX(string _x)
+        {
+            return sendMessage((int)ClientPackets.xCoords, _x);
+        }
+
+        public static string SendY(string _y)
+        {
+            return sendMessage((int)ClientPackets.yCoords, _y);
+        }
     }
 }

@@ -9,6 +9,8 @@
     // client to server
     public enum ClientPackets
     {
-        username = 1
+        username = 1,
+        xCoords = 2,
+        yCoords = 3
     }
 }
