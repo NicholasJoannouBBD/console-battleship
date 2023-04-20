@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleBattleship
 {
-  partial class Screen
+  public class Screen
   {
     private static readonly Color s_backgroundColor = Color.FromArgb(0, 10, 10); // Dark Cyan
     private static readonly Color s_backgroundCharColor = Color.FromArgb(0, 100, 100); // Cyan
