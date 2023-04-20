@@ -1,31 +1,21 @@
-﻿using ConsoleBattleship.Screen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleBattleship.states
-{ 
+{
     internal class LoginState : BaseState
     {
-        private LoginScreen screen = LoginScreen.GetScreen();
         public override void Enter(params object[] args)
         {
-          screen.OnSelectedMenuItem += (string item) => {
-            if (item == "Submit")
-            {
-              //Handle Login
-              StateMachine.StateMachineInstance.ChangeState(StateMachine.GAMESETUP);
-            }
-          };
-          screen.Start();
+            //"Constructor" of the state
         }
 
         public override void Exit(params object[] args)
         {
-          
-          screen.Stop();
+            throw new NotImplementedException();
         }
 
         public override void Render(params object[] args)
