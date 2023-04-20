@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "GYC+JzykNCSJ728BHTl6SobNDO3Q8+aGmGXmow5bSafLcyqkLGhC48gJJwLqRyM3emnXV1B6679LXZoQwRVuOQ==",
+  "dgSpecHash": "6M0/PT/NOAYqdeTxGqnAn4Ekp9KByufFu1BGeGTTuM76OvaXw6AC3mRBiLQM33JejXmH75jljJj5y7Vg6QmaVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\pastel\\4.1.0\\pastel.4.1.0.nupkg.sha512",
@@ -11,9 +12,11 @@
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512",
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\bbdnet2741\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
