@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c76e3b9a-d5d6-4791-a152-184ee0958536" name="Changes" comment="Cleanup of screen merge">
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/bin/Debug/net6.0/ConsoleBattleship.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/ConsoleBattleship.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ConsoleBattleship.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ref/ConsoleBattleship.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/ref/ConsoleBattleship.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/refint/ConsoleBattleship.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/Debug/net6.0/refint/ConsoleBattleship.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleBattleship/ConsoleBattleship/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ff96bcb51892d06de4c377b456a4258ac6dc0acb" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ON8hoq6hUv0gYxUcTE0EDf2ItY" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/bbdnet2841/_Code/console-battleship/ConsoleBattleship",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="console-battleship" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="console-battleship" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c76e3b9a-d5d6-4791-a152-184ee0958536" name="Changes" comment="" />
+      <created>1681389800230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681389800230</updated>
+      <workItem from="1681389801334" duration="6565000" />
+      <workItem from="1681980801420" duration="315000" />
+      <workItem from="1681981725161" duration="516000" />
+    </task>
+    <task id="LOCAL-00001" summary="Console Screen Implementation">
+      <created>1681390085413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681390085413</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Grid and Crosshair + Naming">
+      <created>1681474518635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681474518635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Crosshair Bugfix">
+      <created>1681475018671</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681475018671</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Crosshair Bugfix">
+      <created>1681475032510</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681475032510</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Crosshair Bugfix">
+      <created>1681475180094</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681475180094</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Grid Bugfix and added grid.onchange">
+      <created>1681475848618</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681475848618</updated>
+    </task>
+    <task id="LOCAL-00007" summary="stuttering crosshair fix; Battleship Drawn">
+      <created>1681479776379</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681479776379</updated>
+    </task>
+    <task id="LOCAL-00008" summary="More shiplike battleship">
+      <created>1681481639177</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681481639177</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Improved Grid Stuttering">
+      <created>1681483886338</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681483886338</updated>
+    </task>
+    <task id="LOCAL-00010" summary="new render pipeline. Uses thread locks more effectively">
+      <created>1681492250622</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681492250622</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cleanup of screen merge">
+      <created>1681982205047</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681982205047</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Console Screen Implementation" />
+    <MESSAGE value="Added Grid and Crosshair + Naming" />
+    <MESSAGE value="Crosshair Bugfix" />
+    <MESSAGE value="Grid Bugfix and added grid.onchange" />
+    <MESSAGE value="stuttering crosshair fix; Battleship Drawn" />
+    <MESSAGE value="More shiplike battleship" />
+    <MESSAGE value="Improved Grid Stuttering" />
+    <MESSAGE value="new render pipeline. Uses thread locks more effectively" />
+    <MESSAGE value="Cleanup of screen merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup of screen merge" />
+  </component>
+</project>
