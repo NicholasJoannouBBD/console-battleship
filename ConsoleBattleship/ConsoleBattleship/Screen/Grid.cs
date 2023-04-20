@@ -1,31 +1,31 @@
 ﻿namespace ConsoleBattleship
 {
-  internal class Grid
+  public class Grid
   {
     private string[][] _gridArray;
 
-    private readonly int _width;
-    private readonly int _height;
+    public readonly int Width;
+    public readonly int Height;
 
     public delegate void ChangeDelegate(int row, int column, string previousValue, string newValue);
     public event ChangeDelegate OnChange = delegate { };
 
     public Grid(int width, int height, string initial) 
     { 
-      _width = width;
-      _height = height;
-      _gridArray = new string[_height][];
+      Width = width;
+      Height = height;
+      _gridArray = new string[Height][];
 
-      string[] row = new string[_width];
+      string[] row = new string[Width];
 
-      for (int i = 0; i < _width; i++)
+      for (int i = 0; i < Width; i++)
       {
         row[i] = initial; 
       }
 
-      for (int i = 0;i < _height; i++)
+      for (int i = 0;i < Height; i++)
       {
-        _gridArray[i] = new string[_width];
+        _gridArray[i] = new string[Width];
         row.CopyTo(_gridArray[i], 0);
       }
     }
@@ -37,9 +37,9 @@
       lock (_gridArray)
       {
         // May want to note this later on
-        if (!(0 < row && row < _height && 0 < column && column < _width)) {
-          row = Math.Abs(row % _height);
-          column = Math.Abs(column % _width);
+        if (!(0 < row && row < Height && 0 < column && column < Width)) {
+          row = Math.Abs(row % Height);
+          column = Math.Abs(column % Width);
         }
         old = _gridArray[row][column];
       }
@@ -63,7 +63,7 @@
     /// </summary>
     public IEnumerable<String[]> GetAllRows()
     {
-      for (int i = 0; i < _height; i++)
+      for (int i = 0; i < Height; i++)
       {
         yield return _gridArray[i];
       }
@@ -74,10 +74,10 @@
     /// </summary>
     public IEnumerable<String[]> GetAllColumns()
     {
-      for (int i = 0; i < _width; i++)
+      for (int i = 0; i < Width; i++)
       {
-        string[] column = new string[_height];
-        for (int j = 0; j < _height; j++)
+        string[] column = new string[Height];
+        for (int j = 0; j < Height; j++)
         {
           column[j] = _gridArray[j][i];
         }
