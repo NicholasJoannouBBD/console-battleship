@@ -23,7 +23,7 @@ using var connection = new SQLiteConnection(url);
 connection.Open();
 
 
-StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.EXAMPLE, new object[] { "123" });
+StateMachine.StateMachineInstance.ChangeState(StateMachine.EXAMPLE, new object[] { "123" });
 
 //temporary infinite loop
 while (true)
