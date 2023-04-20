@@ -9,6 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="Pastel" Version="4.1.0" />
-    <PackageReference Include="System.Data.SQLite.COre" Version="1.0.117" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
   </ItemGroup>
 </Project>
