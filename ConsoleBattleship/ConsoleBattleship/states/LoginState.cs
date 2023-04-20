@@ -6,25 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleBattleship.states
-{ 
+{
     internal class LoginState : BaseState
-    {
+    { 
         private LoginScreen screen = LoginScreen.GetScreen();
         public override void Enter(params object[] args)
         {
-          screen.OnSelectedMenuItem += (string item) => {
-            if (item == "Submit")
-            {
-              //Handle Login
+          screen.OnLoginAttempt += (string user, string password) =>
+          {
+            //If login true:
+              screen.Stop();
               StateMachine.StateMachineInstance.ChangeState(StateMachine.GAMESETUP);
-            }
           };
           screen.Start();
         }
 
         public override void Exit(params object[] args)
         {
-          
           screen.Stop();
         }
 
