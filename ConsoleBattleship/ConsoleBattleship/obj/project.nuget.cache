@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XjKor6gFaSHw3QUDELHl1FC9LxQlyiw8QOntTQAZiA2JPDyIHhWJAMh/v+Yim6AE5pUg24r2JglMt7PpYIdq9Q==",
+  "dgSpecHash": "01yJr2P5d0KbgM0IBE5CY5rmsS8ePUGfJkj1zup+93Y6QmkNps851EOxLycM7aa9Jc1FOuuUhmabf6hHzRjCAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bbdnet2741\\Documents\\Console Battleship\\console-battleship\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\pastel\\4.1.0\\pastel.4.1.0.nupkg.sha512",
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
+    "C:\\Users\\bbdnet2741\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512"
+  ],
   "logs": []
 }
