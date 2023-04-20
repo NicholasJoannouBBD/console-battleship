@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleBattleship.Score;
+
 
 namespace ConsoleBattleship.states
 {
@@ -20,14 +22,15 @@ namespace ConsoleBattleship.states
 
         public override void Render(params object[] args)
         {
-            //this is all the output to go on the screen.
+            // check if correct
+            //Score thingy = new Score();
+
+
         }
 
         public override void Update(params object[] args)
         {
-            //function is used to update some logic on an event call, or tick rate.
             this.Render();
-            //StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.<STATE_NAME>, new object[] { <PARAMS> });
         }
     }
 }

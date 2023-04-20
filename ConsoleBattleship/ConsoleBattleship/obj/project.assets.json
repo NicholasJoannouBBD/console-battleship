@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Pastel/4.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Pastel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Pastel.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Stub.System.Data.SQLite.Core.NetStandard/1.0.117": {
         "type": "package",
         "compile": {
@@ -42,6 +55,26 @@
     }
   },
   "libraries": {
+    "Pastel/4.1.0": {
+      "sha512": "2RGTLbvDyhUyZmNIAdyJZkQTr8RJwD/l4vEvFujLRZN2uxJal1AR8STe7rJwrYESO/Waaa20eYhVd4Q3KX+Nxw==",
+      "type": "package",
+      "path": "pastel/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "icon.png",
+        "lib/net462/Pastel.dll",
+        "lib/net462/Pastel.xml",
+        "lib/net6.0/Pastel.dll",
+        "lib/net6.0/Pastel.xml",
+        "lib/net7.0/Pastel.dll",
+        "lib/net7.0/Pastel.xml",
+        "pastel.4.1.0.nupkg.sha512",
+        "pastel.nuspec"
+      ]
+    },
     "Stub.System.Data.SQLite.Core.NetStandard/1.0.117": {
       "sha512": "x1zzPC/A4MmiKGDLoxLE6O5KLu7Kz7dyzhPQzlqYFTFcXmXAtM7hNNWpGw5yLEz833AnGbd/kxoitXArgR4YyA==",
       "type": "package",
@@ -77,30 +110,29 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Pastel >= 4.1.0",
       "System.Data.SQLite.COre >= 1.0.117"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbdnet2759\\.nuget\\packages\\": {}
+    "/Users/xander/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbdnet2759\\Desktop\\GradWork\\Level Ups\\C#\\Project\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
+      "projectUniqueName": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/ConsoleBattleship.csproj",
       "projectName": "ConsoleBattleship",
-      "projectPath": "C:\\Users\\bbdnet2759\\Desktop\\GradWork\\Level Ups\\C#\\Project\\ConsoleBattleship\\ConsoleBattleship\\ConsoleBattleship.csproj",
-      "packagesPath": "C:\\Users\\bbdnet2759\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbdnet2759\\Desktop\\GradWork\\Level Ups\\C#\\Project\\ConsoleBattleship\\ConsoleBattleship\\obj\\",
+      "projectPath": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/ConsoleBattleship.csproj",
+      "packagesPath": "/Users/xander/.nuget/packages/",
+      "outputPath": "/Users/xander/Desktop/Projects/console-battleship/ConsoleBattleship/ConsoleBattleship/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bbdnet2759\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/xander/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -119,6 +151,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Pastel": {
+            "target": "Package",
+            "version": "[4.1.0, )"
+          },
           "System.Data.SQLite.COre": {
             "target": "Package",
             "version": "[1.0.117, )"
@@ -135,30 +171,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.16, 6.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.16, 6.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.16, 6.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.16, 6.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
       }
     }
   }
