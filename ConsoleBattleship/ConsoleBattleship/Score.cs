@@ -11,7 +11,7 @@ using ConsoleBattleship;
 
 // need to see where this fits in and how it is called.
 
-namespace ConsoleBattleship.Score
+namespace ConsoleBattleship
 {
     public class Score
     {
@@ -107,10 +107,9 @@ namespace ConsoleBattleship.Score
             databaseX.updateUserLosses(loosingUsername);
         }
 
-        public string displayLeaderboard()
+        public void displayLeaderboard()
         {
-            //Console.WriteLine(database.getLeaderboard);
-            return "";
+            Console.WriteLine(databaseX.getLeaderboard);
         }
 
     }
