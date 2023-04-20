@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+    // need to see where this fits in and how it is called.
+
 namespace ConsoleBattleship.Score
 {
     public class Score {
@@ -29,8 +31,9 @@ namespace ConsoleBattleship.Score
     public void incrementPlayer2Score(int points)
     {
         player2Score =+ points;
-        this.detectWin(player2Score);
-
+        if(this.detectWin(player1Score) == true){
+            // updateLeaderboard();
+        }
     }
     
     public int getPlayer1Score()
@@ -61,10 +64,14 @@ namespace ConsoleBattleship.Score
         return false;
     }
 
+    public void displayScore(){
+        // see how this fits in with the current game screen 
+        Console.WriteLine("Player 1 score: " + player1Score + " | Player 2 score: " + player2Score);
+    }
+
     public void updateLeaderboard(string winningPlayer, string loosingPlayer){
         // update db with one win, one loss
     }
 
-    // need to see where this fits in and how it is called.
 }
 }
