@@ -102,7 +102,7 @@ namespace ConsoleBattleship
             }
         }
 
-        public List<Cell> checkCellOccupation(List<Cell> cells, int startRow, int startColumn, int endRow, int endColumn)
+        private List<Cell> checkCellOccupation(List<Cell> cells, int startRow, int startColumn, int endRow, int endColumn)
         {
             return cells.Where(x => x.Position.Row >= startRow && 
                                     x.Position.Column >= startColumn &&
@@ -110,7 +110,7 @@ namespace ConsoleBattleship
                                     x.Position.Column <= endColumn).ToList();
         }
 
-        public Cell At(List<Cell> cells, int row, int column)
+        private Cell At(List<Cell> cells, int row, int column)
         {
             return cells.Where(x => x.Position.Row == row && x.Position.Column == column).First();
         }
