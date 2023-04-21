@@ -42,6 +42,8 @@ namespace ConsoleBattleship.states
             screen.Refresh();
 
 
+            Score thingy = new Score();
+            thingy.displayLeaderboard();
         }
 
         public override void Update(params object[] args)

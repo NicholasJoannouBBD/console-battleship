@@ -18,7 +18,7 @@ namespace ConsoleBattleship.states
         if (item == "Host")
         {
           screen.Stop();
-          StateMachine.StateMachineInstance.ChangeState(StateMachine.GAMESETUP);
+          StateMachine.StateMachineInstance.ChangeState(StateMachine.FINDGAME);
         }
         if (item == "Quit")
           {
