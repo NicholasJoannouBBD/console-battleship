@@ -6,7 +6,7 @@ namespace ConsoleBattleship.Screen
   {
     private static readonly int s_padding = 2;
     public static readonly List<string> MenuItems = new(){
-      "Host", "Join", "Options", "Quit"
+      "Host", "Profile", "High Scores", "Quit"
     };
 
 

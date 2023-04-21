@@ -64,3 +64,11 @@ C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattl
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\refint\ConsoleBattleship.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.pdb
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.deps.json
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.runtimeconfig.json
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.dll
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.pdb
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\SQLitePCLRaw.core.dll
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.genruntimeconfig.cache
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ref\ConsoleBattleship.dll

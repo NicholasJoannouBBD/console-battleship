@@ -20,6 +20,16 @@ namespace ConsoleBattleship.states
           screen.Stop();
           StateMachine.StateMachineInstance.ChangeState(StateMachine.GAMESETUP);
         }
+        if (item == "Quit")
+          {
+              screen.Stop();
+              StateMachine.StateMachineInstance.ChangeState(StateMachine.EXIT);
+          }
+          if (item == "High Scores")
+          {
+              screen.Stop();
+              StateMachine.StateMachineInstance.ChangeState(StateMachine.HIGHSCORES);
+          }
       };
       screen.Start();
     }

@@ -11,75 +11,31 @@ namespace ConsoleBattleship.UserServices
     class Authentication
     {
         DbHandler handler = DbHandler.Instance;
-        private static List<string> menuItems = new List<string> {"Find Game", "Profile", "High scores"};
-        Menu menu = new Menu(menuItems);
-        
-        
 
-        public void SignUp()
+        public void SignUp(string username, string password)
         {
-            Console.WriteLine("Enter Username: ");
-            string username = Console.ReadLine();
-
-            Console.WriteLine("Enter Password: ");
-            string password = Console.ReadLine();
 
             //Check if user already exists
-            bool isValid = handler.isValidUser(username, password);
-            if (isValid)
+            bool isValid = handler.doesUsernameExist(username);
+            if (!isValid)
             {
-                Console.WriteLine();
-                Console.WriteLine("********************Username already exists. Please pick a different username.********************");
-                Console.WriteLine();
-                return;
+                //Add new user to DB
+                handler.createUser(username, password);
             }
-
-            //Add new user to DB
-            handler.createUser(username, password);
-            bool isCreated = handler.isValidUser(username, password);
-            if (isCreated)
-            {
-                Console.WriteLine();
-                Console.WriteLine("********************Sign up successful. Please log in.********************");
-                Console.WriteLine();
-                LogIn();
-                //return;
-            }
-
+            
         }
 
-        public void LogIn()
+        public void LogIn(string user, string pwd)
         {
-            Console.WriteLine("Enter Username: ");
-            string username = Console.ReadLine();
-
-            Console.WriteLine("Enter Password: ");
-            string password = Console.ReadLine();
+            string username = user;
+            string password = pwd;
 
             //Verify username and password
             bool isValid = handler.isValidUser(username, password);
-            if (isValid)
-            {
-                Console.WriteLine();
-                Console.WriteLine("********************Login successful.********************");
-                Console.WriteLine();
-                menu.displayMenu();
-            }
-            else
-            {
-                Console.WriteLine();
-                Console.WriteLine("********************Invalid Username or Password. Please try again.********************");
-                Console.WriteLine();
-            }
         }
 
-        public void ForgotPassword()
+        public void ForgotPassword(string username, string password)
         {
-            Console.WriteLine("Enter Username: ");
-            string username = Console.ReadLine();
-
-            Console.WriteLine("Enter New Password: ");
-            string password = Console.ReadLine();
 
             //Verify username and password
             bool userExists = handler.doesUsernameExist(username);
@@ -87,16 +43,6 @@ namespace ConsoleBattleship.UserServices
             if (userExists)
             {
                 handler.updateUserPassword(username, password);
-                Console.WriteLine();
-                Console.WriteLine("********************Password updated successfully. Please log in!********************");
-                Console.WriteLine();
-                LogIn();
-            }
-            else
-            {
-                Console.WriteLine();
-                Console.WriteLine("********************Password update failed. Please try again.********************");
-                Console.WriteLine();
             }
             
         }

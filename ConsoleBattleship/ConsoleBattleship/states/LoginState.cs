@@ -1,4 +1,5 @@
 ﻿using ConsoleBattleship.Screen;
+using ConsoleBattleship.UserServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,36 @@ namespace ConsoleBattleship.states
     internal class LoginState : BaseState
     { 
         private LoginScreen screen = LoginScreen.GetScreen();
+        Authentication Auth = new Authentication();
+        DbHandler handler = DbHandler.Instance;
         public override void Enter(params object[] args)
         {
-          screen.OnLoginAttempt += (string user, string password, bool registering) =>
+          screen.OnLoginAttempt += (string user, string password, bool registering, bool forgotPassword) =>
           {
-            //If login true:
-              screen.Stop();
-              StateMachine.StateMachineInstance.ChangeState(StateMachine.MENU);
+              if (!registering && !forgotPassword)
+              {
+                 Auth.LogIn(user, password);
+              }
+              if (registering)
+              {
+                  //Auth.SignUp(user, password);
+                  bool isExistingUser = handler.doesUsernameExist(user);
+                  if (!isExistingUser)
+                  {
+                      handler.createUser(user, password);
+                  }
+              }
+              if (forgotPassword)
+              {
+                  Auth.ForgotPassword(user, password);
+              }
+              
+              bool isValid = handler.isValidUser(user, password);
+              if (isValid)
+              {
+                  screen.Stop();
+                  StateMachine.StateMachineInstance.ChangeState(StateMachine.MENU);
+              }
           };
           screen.Start();
         }
