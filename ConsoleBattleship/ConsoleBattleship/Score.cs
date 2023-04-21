@@ -104,9 +104,24 @@ namespace ConsoleBattleship
             databaseX.updateUserLosses(loosingUsername);
         }
 
-        public void displayLeaderboard()
+        public List<string> displayLeaderboard()
         {
-            Console.WriteLine(databaseX.getLeaderboard);
+            //Console.WriteLine(databaseX.getLeaderboard());
+            List<string> leaderboard = new List<string>();
+            using (StringReader reader = new StringReader(databaseX.getLeaderboard()))
+            {
+                string line = string.Empty;
+                do
+                {
+                    line = reader.ReadLine();
+                    if (line != null)
+                    {
+                        leaderboard.Add(line);
+                    }
+
+                } while (line != null);
+            }
+            return leaderboard;
         }
 
     }
