@@ -36,6 +36,10 @@ namespace ConsoleBattleship.Sockets
                         //change state to the game setup
                         return "Ready";
                     }
+                    if (response.Contains("PLAY"))
+                    {
+                        return "PLAY";
+                    }
                 }
                 else
                 {
@@ -51,7 +55,7 @@ namespace ConsoleBattleship.Sockets
         }
         public void Setup()
         {
-            networkStream.Write(Encoding.UTF8.GetBytes("BRUH"), 0, Encoding.UTF8.GetBytes("BRUH").Length);
+            networkStream.Write(Encoding.UTF8.GetBytes("SETUP Complete"), 0, Encoding.UTF8.GetBytes("SETUP Complete").Length);
         }
         public void Exit()
         {
