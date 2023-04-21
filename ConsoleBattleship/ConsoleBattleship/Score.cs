@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SQLite;
 using ConsoleBattleship;
 
-
-
-
-// need to see where this fits in and how it is called.
 
 namespace ConsoleBattleship
 {
@@ -18,7 +13,6 @@ namespace ConsoleBattleship
         private int player1Score;
         private int player2Score;
         public bool isGameActive;
-        // both of these need to be set when the game starts
         public string user1Name;
         public string user2Name;
         public string winningUsername;
@@ -34,7 +28,6 @@ namespace ConsoleBattleship
             user2Name = "";
             winningUsername = "";
             loosingUsername = "";
-            // isGameActive here
         }
 
         public void setupGame(string name1, string name2)
@@ -79,8 +72,6 @@ namespace ConsoleBattleship
         {
             player1Score = 0;
             player2Score = 0;
-            // game should be actuve when played, and be not when it ends or no game is played. 
-            // This means isGameActive would need to be updated extenally when a new game is being set up.
             isGameActive = true;
         }
 
@@ -88,7 +79,6 @@ namespace ConsoleBattleship
         {
             if (score >= 17)
             {
-                // need to check after every sunk ship is this is false, if so the game ends.
                 isGameActive = false;
                 return true;
             }
@@ -97,8 +87,15 @@ namespace ConsoleBattleship
 
         public void displayScore()
         {
-            // see how this fits in with the current game screen 
+            // basic
             Console.WriteLine("Player 1 score: " + player1Score + " | Player 2 score: " + player2Score);
+
+            // box
+
+            //Console.WriteLine(" __________________________________________________________ ");
+            //Console.WriteLine("|                                                          |");
+            //Console.WriteLine("| Player 1 score: " + "17" + "           | Player 2 score: " + "12" + "        |");
+            //Console.WriteLine("-----------------------------------------------------------");
         }
 
         private void updateDatabase(string winningUsername, string loosingUsername)
