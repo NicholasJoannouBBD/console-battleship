@@ -275,7 +275,7 @@ namespace ConsoleBattleship
                 "FROM games " +
                 "INNER JOIN users ON games.user_id = users.user_id " +
                 "WHERE games.score > 0 " +
-                "ORDER BY games.score DESC " +
+                "ORDER BY games.score ASC " +
                 "LIMIT 10";
 
             using var cmd = new SQLiteCommand(statement, connection);
