@@ -22,8 +22,8 @@ namespace ConsoleBattleship.states
 
         public override void Render(params object[] args)
         {
-            Score thingy = new Score();
-            thingy.displayLeaderboard();
+            Score score = new Score();
+            score.displayLeaderboard();
         }
 
         public override void Update(params object[] args)

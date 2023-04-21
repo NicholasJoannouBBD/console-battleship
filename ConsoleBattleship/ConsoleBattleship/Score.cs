@@ -94,7 +94,7 @@ namespace ConsoleBattleship
 
             //Console.WriteLine(" __________________________________________________________ ");
             //Console.WriteLine("|                                                          |");
-            //Console.WriteLine("| Player 1 score: " + "17" + "           | Player 2 score: " + "12" + "        |");
+            //Console.WriteLine("| Player 1 score: " + player1Score + "           | Player 2 score: " + player2Score + "        |");
             //Console.WriteLine("-----------------------------------------------------------");
         }
 
