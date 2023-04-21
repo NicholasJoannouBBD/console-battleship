@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleBattleship.Sockets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,12 @@ namespace ConsoleBattleship.states
 {
     internal class TurnState : BaseState
     {
+        Client c1;
         public override void Enter(params object[] args)
         {
             //"Constructor" of the state
+            this.c1 = (Client)args[0];
+            c1.Setup();
         }
 
         public override void Exit(params object[] args)
@@ -21,6 +25,7 @@ namespace ConsoleBattleship.states
         public override void Render(params object[] args)
         {
             //this is all the output to go on the screen.
+            Console.WriteLine("PLAYING GAME");
         }
 
         public override void Update(params object[] args)

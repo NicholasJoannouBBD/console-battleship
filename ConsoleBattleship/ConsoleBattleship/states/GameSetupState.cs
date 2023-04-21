@@ -12,37 +12,38 @@ namespace ConsoleBattleship.states
     {
         GameScreen screen = GameScreen.GetScreen(40, 20);
         Client c1;
+        Game game;
         public override void Enter(params object[] args)
         {
             this.c1 = (Client)args[0];
             c1.Setup();
-            screen.Start();
+            this.game = new Game();
+            this.game.Player1.SetupShips();
         }
 
         public override void Exit(params object[] args)
         {
-            screen.Stop();
+            //screen.Stop();
         }
 
         public override void Render(params object[] args)
         {
             //this is all the output to go on the screen.
-            for (int i = 0; i < 100; i++)
-            {
-                BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 10, 10, 30 * i);
-                BattleshipDrawer.Draw3x1Battleship(screen.BattleshipGrid, 15, 2 * i, 90);
-                Thread.Sleep(500);
-                BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 10, 10, 30 * i);
-                BattleshipDrawer.UndoDraw3x1Battleship(screen.BattleshipGrid, 15, 2 * i, 90);
-            }
+            game.Player1.OutputBoards(game.Player1.GameBoard, game.Player1.FiringBoard);
             Console.WriteLine(c1);
+            c1.Setup();
+            Console.ReadLine();
         }
 
         public override void Update(params object[] args)
         {
             //function is used to update some logic on an event call, or tick rate.
             this.Render();
-
+            string res = c1.ListenerClient();
+            if (res.Equals("PLAY"))
+            {
+                StateMachine.StateMachineInstance.ChangeState(StateMachine.TURN, new object[] { c1 });
+            }
             //StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.<STATE_NAME>, new object[] { <PARAMS> });
         }
     }

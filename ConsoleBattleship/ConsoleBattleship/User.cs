@@ -125,7 +125,17 @@ namespace ConsoleBattleship
                 for(int column = 1; column <= board.Height; column++) 
                 {
                     Cell cellAt = At(board.Cells, row, column);
-                    Console.Write(cellAt.Status + " ");
+                    if (!cellAt.Status.Equals("o"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(cellAt.Status + " ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.Write(cellAt.Status + " ");
+                    }
+                    
                 }
                 Console.Write("         ");
 

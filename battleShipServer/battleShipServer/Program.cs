@@ -53,7 +53,10 @@ while (true)
     {
         int bytesRead = stream2.Read(buffer2, 0, buffer2.Length);
         string message = Encoding.ASCII.GetString(buffer2, 0, bytesRead);
-        
+        if(message.Equals("SETUP Complete"))
+        {
+            writerPlayer1.WriteLine("PLAY");
+        }
         //writerPlayer2.WriteLine("MESSAGE TO P2");
     }
 
@@ -62,7 +65,11 @@ while (true)
     {
         int bytesRead = stream2.Read(buffer2, 0, buffer2.Length);
         string message = Encoding.ASCII.GetString(buffer2, 0, bytesRead);
-       
+        if (message.Equals("SETUP Complete"))
+        {
+            writerPlayer2.WriteLine("PLAY");
+            writerPlayer2.Flush();
+        }
         //stream1.Write(buffer2, 0, bytesRead);
     }
 
