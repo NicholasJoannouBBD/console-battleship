@@ -8,7 +8,7 @@ using ConsoleBattleship;
 
 namespace ConsoleBattleship
 {
-    public class Score
+    public partial class Score
     {
         private int player1Score;
         private int player2Score;
@@ -20,21 +20,6 @@ namespace ConsoleBattleship
 
         private DbHandler databaseX = DbHandler.Instance;
 
-        public Score()
-        {
-            player1Score = 0;
-            player2Score = 0;
-            user1Name = "";
-            user2Name = "";
-            winningUsername = "";
-            loosingUsername = "";
-        }
-
-        public void setupGame(string name1, string name2)
-        {
-            user1Name = name1;
-            user2Name = name2;
-        }
 
         public void incrementPlayer1Score(int points)
         {
@@ -66,13 +51,6 @@ namespace ConsoleBattleship
         public int getPlayer2Score()
         {
             return player2Score;
-        }
-
-        public void resetGame()
-        {
-            player1Score = 0;
-            player2Score = 0;
-            isGameActive = true;
         }
 
         public bool detectWin(int score)
