@@ -2,11 +2,11 @@
 
 namespace ConsoleBattleship.Screen
 {
-    internal class LoginScreen : BaseScreen
-    {
-        private static readonly int s_padding = 2;
-        public static readonly List<string> MenuItems = new(){
-      "LOGIN", "User", "Password", "Submit", "Register"
+  internal class LoginScreen : BaseScreen
+  {
+    private static readonly int s_padding = 2;
+    public static readonly List<string> MenuItems = new(){
+      "Welcome To BattleShip", "User", "Password", "Login", "Register", "Forgot Password"
     };
 
         private string _user = "";
@@ -19,8 +19,8 @@ namespace ConsoleBattleship.Screen
         public delegate void MenuDelegate(string menuItem);
         public event MenuDelegate OnSelectedMenuItem = delegate { };
 
-        public delegate void LoginDelegate(string user, string password, bool registering);
-        public event LoginDelegate OnLoginAttempt = delegate { };
+    public delegate void LoginDelegate(string user, string password, bool registering, bool forgotPassword);
+    public event LoginDelegate OnLoginAttempt = delegate { };
 
         private static LoginScreen s_instance = new(
           Console.WindowWidth - (2 * s_padding) - 2,
@@ -216,25 +216,20 @@ namespace ConsoleBattleship.Screen
             }
         }
 
-        // On Selection
-        private void HandleSubmit(string item)
-        {
-            if (item == "Submit")
-            {
-                if (DbHandler.Instance.isValidUser(_user,_password))
-                {
-                    OnLoginAttempt(_user, _password, false);
-                }
-                else
-                {
-                    Console.WriteLine("FAKE");
-                }
-
-            }
-            else if (item == "Register")
-            {
-                OnLoginAttempt(_user, _password, true);
-            }
-        }
+    // On Selection
+    private void HandleSubmit(string item)
+    {
+      if (item == "Login")
+      {
+        OnLoginAttempt(_user, _password, false, false);
+      } else if (item == "Register")
+      {
+        OnLoginAttempt(_user, _password, true, false);
+      }
+      else if (item == "Forgot Password")
+      {
+        OnLoginAttempt(_user, _password, false, true);
+      }
     }
+  }
 }
