@@ -16,7 +16,8 @@ namespace ConsoleBattleship.Sockets
         {
             this.clientSocket = new TcpClient();
             clientSocket.Connect("127.0.0.1", 8888);
-            Console.WriteLine("Connected to server");
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("Connected to server             ");
             Console.WriteLine("Waiting for players...");
             this.networkStream = clientSocket.GetStream();
             this.reader = new StreamReader(networkStream);
@@ -43,6 +44,8 @@ namespace ConsoleBattleship.Sockets
                 }
                 else
                 {
+                    Console.SetCursorPosition(0, 0);
+
                     Console.WriteLine("Connect the server first");
                 }
                 

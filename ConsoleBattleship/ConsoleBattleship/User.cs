@@ -4,7 +4,9 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleBattleship.Screen;
 using ConsoleBattleship.Ships;
+using Pastel;
 
 namespace ConsoleBattleship
 {
@@ -27,7 +29,7 @@ namespace ConsoleBattleship
             }
         }
 
-        public User(int userId, string userName, int wins, int loses)
+        public User(int userId, string userName, int wins, int loses, int width, int height)
         {
             UserId = userId;
             UserName = userName;
@@ -41,8 +43,8 @@ namespace ConsoleBattleship
                 new Cruiser(),
                 new Submarine()
             };
-            GameBoard = new GameBoard(10, 10);
-            FiringBoard = new GameBoard(10, 10);
+            GameBoard = new GameBoard(width, height);
+            FiringBoard = new GameBoard(width, height);
         }
 
         //Random placement of ships on the Gameboard
@@ -115,38 +117,28 @@ namespace ConsoleBattleship
             return cells.Where(x => x.Position.Row == row && x.Position.Column == column).First();
         }
 
-        public void OutputBoards(GameBoard board, GameBoard firingBoard)
+        public void OutputBoards(GameBoard board, GameBoard firingBoard, Grid gamegrid)
         {
-            Console.WriteLine(UserName);
-            Console.WriteLine("Own Board:                 Firing Board:");
-            
-            for(int row = 1; row <= board.Width; row++)
-            {
-                for(int column = 1; column <= board.Height; column++) 
-                {
-                    Cell cellAt = At(board.Cells, row, column);
-                    if (!cellAt.Status.Equals("o"))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(cellAt.Status + " ");
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
-                    else
-                    {
-                        Console.Write(cellAt.Status + " ");
-                    }
-                    
-                }
-                Console.Write("         ");
-
-                for(int firingColumn = 1; firingColumn <= firingBoard.Height; firingColumn++)
-                {
-                    Cell cellAt = At(firingBoard.Cells, row, firingColumn);
-                    Console.Write(cellAt.Status + " ");
-                }
-                Console.WriteLine(Environment.NewLine);
-            }
-            Console.WriteLine(Environment.NewLine);
+      for (int row = 1; row <= board.Width; row++)
+      {
+        for (int column = 1; column <= board.Height; column++)
+        {
+          Cell cellAt = At(board.Cells, row, column);
+          if (!cellAt.Status.Equals("o"))
+          {
+            gamegrid.ReplaceChar(row - 1, column - 1, cellAt.Status.Pastel(Colors.Battleship));
+          }          
         }
+        for (int column = 1; column <= firingBoard.Height; column++)
+        {
+          Cell cellAt = At(firingBoard.Cells, row, column);
+          if (!cellAt.Status.Equals("o"))
+          {
+            gamegrid.GetChar(row - 1, column - 1);
+            gamegrid.ReplaceChar(row - 1, column - 1, gamegrid.GetChar(row - 1, column - 1).Pastel(Colors.InputPrompt));
+          }
+        }
+      }
+    }
     }
 }

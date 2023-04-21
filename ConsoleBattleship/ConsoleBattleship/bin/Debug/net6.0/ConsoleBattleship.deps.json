@@ -8,24 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "ConsoleBattleship/1.0.0": {
         "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "7.0.5",
           "Pastel": "4.1.0",
           "System.Data.SQLite.Core": "1.0.117",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
           "ConsoleBattleship.dll": {}
-        }
-      },
-      "Microsoft.Data.Sqlite.Core/7.0.5": {
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.4"
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Data.Sqlite.dll": {
-            "assemblyVersion": "7.0.5.0",
-            "fileVersion": "7.0.523.16503"
-          }
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -74,17 +62,6 @@
             "rid": "win-x86",
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
-          }
-        }
-      },
-      "SQLitePCLRaw.core/2.1.4": {
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "2.1.4.1835",
-            "fileVersion": "2.1.4.1835"
           }
         }
       },
@@ -150,7 +127,6 @@
           "Stub.System.Data.SQLite.Core.NetStandard": "1.0.117"
         }
       },
-      "System.Memory/4.5.3": {},
       "System.Security.AccessControl/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -165,13 +141,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Microsoft.Data.Sqlite.Core/7.0.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FTerRmQPqHrCrnoUzhBu+E+1DNGwyrAMLqHkAqOOOu5pGfyMOj8qQUBxI/gDtWtG11p49UxSfWmBzRNlwZqfUg==",
-      "path": "microsoft.data.sqlite.core/7.0.5",
-      "hashPath": "microsoft.data.sqlite.core.7.0.5.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
@@ -222,13 +191,6 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "SQLitePCLRaw.core/2.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-inBjvSHo9UDKneGNzfUfDjK08JzlcIhn1+SP5Y3m6cgXpCxXKCJDy6Mka7LpgSV+UZmKSnC8rTwB0SQ0xKu5pA==",
-      "path": "sqlitepclraw.core/2.1.4",
-      "hashPath": "sqlitepclraw.core.2.1.4.nupkg.sha512"
-    },
     "Stub.System.Data.SQLite.Core.NetStandard/1.0.117": {
       "type": "package",
       "serviceable": true,
@@ -249,13 +211,6 @@
       "sha512": "sha512-lGfOhA3QQod9XhdWYqLgNgbgq5uZnVG6DtnhDAdPisbLpTTgZBNbeGnp+GWt8C+3EyaqBYTGJWXcxHlHKwo05A==",
       "path": "system.data.sqlite.core/1.0.117",
       "hashPath": "system.data.sqlite.core.1.0.117.nupkg.sha512"
-    },
-    "System.Memory/4.5.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Security.AccessControl/4.7.0": {
       "type": "package",

@@ -25,6 +25,7 @@ namespace ConsoleBattleship.states
         public override void Render(params object[] args)
         {
             //this is all the output to go on the screen.
+            Console.SetCursorPosition(0, 0);
             Console.WriteLine("PLAYING GAME");
         }
 

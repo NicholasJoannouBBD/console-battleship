@@ -93,8 +93,6 @@ namespace ConsoleBattleship.states
             //Append new states by adding them to the dictionary
             Dictionary<string, BaseState> statesRef = new Dictionary<string, BaseState>()
             {
-                {EXAMPLE, new StateExample()},
-                {SECOND, new SecondStateExample() },
                 {LOGIN, new LoginState() },
                 {CREATEACCOUNT, new CreateAccountState() },
                 {MENU, new MenuState() },

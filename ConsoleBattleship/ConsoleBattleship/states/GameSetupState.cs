@@ -17,22 +17,23 @@ namespace ConsoleBattleship.states
         {
             this.c1 = (Client)args[0];
             c1.Setup();
-            this.game = new Game();
+            this.game = new Game(screen.BattleshipGrid.Width, screen.BattleshipGrid.Height);
             this.game.Player1.SetupShips();
+            screen.Start();
         }
 
         public override void Exit(params object[] args)
         {
-            //screen.Stop();
+            screen.Stop();
         }
 
         public override void Render(params object[] args)
         {
             //this is all the output to go on the screen.
-            game.Player1.OutputBoards(game.Player1.GameBoard, game.Player1.FiringBoard);
-            Console.WriteLine(c1);
+            game.Player1.OutputBoards(game.Player1.GameBoard, game.Player1.FiringBoard, screen.BattleshipGrid);
+            //Console.WriteLine(c1);
             c1.Setup();
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         public override void Update(params object[] args)
@@ -42,7 +43,7 @@ namespace ConsoleBattleship.states
             string res = c1.ListenerClient();
             if (res.Equals("PLAY"))
             {
-                StateMachine.StateMachineInstance.ChangeState(StateMachine.TURN, new object[] { c1 });
+                //StateMachine.StateMachineInstance.ChangeState(StateMachine.TURN, new object[] { c1 });
             }
             //StateMachine.StateMachineInstance.ChangeState(StateMachine.StateMachineInstance.<STATE_NAME>, new object[] { <PARAMS> });
         }
