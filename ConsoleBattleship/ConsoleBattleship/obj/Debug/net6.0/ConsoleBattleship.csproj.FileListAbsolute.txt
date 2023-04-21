@@ -1,49 +1,16 @@
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.exe
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.deps.json
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.runtimeconfig.json
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.pdb
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\Pastel.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\System.Data.SQLite.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\linux-x64\native\SQLite.Interop.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\osx-x64\native\SQLite.Interop.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win-x64\native\SQLite.Interop.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win-x86\native\SQLite.Interop.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.AssemblyReference.cache
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfoInputs.cache
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfo.cs
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CoreCompileInputs.cache
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CopyComplete
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\refint\ConsoleBattleship.dll
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.pdb
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.genruntimeconfig.cache
-C:\Users\bbdnet2841\_Code\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ref\ConsoleBattleship.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.AssemblyReference.cache
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfoInputs.cache
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfo.cs
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CoreCompileInputs.cache
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\refint\ConsoleBattleship.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.pdb
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.exe
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.deps.json
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.runtimeconfig.json
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.pdb
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\Pastel.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\System.Data.SQLite.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\linux-x64\native\SQLite.Interop.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\osx-x64\native\SQLite.Interop.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win-x64\native\SQLite.Interop.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win-x86\native\SQLite.Interop.dll
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CopyComplete
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.genruntimeconfig.cache
-C:\Users\bbdnet2798\Documents\Graduate Program 2023\TheHive\LevelUps\C# Track\GroupProject\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ref\ConsoleBattleship.dll
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.AssemblyReference.cache
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfoInputs.cache
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfo.cs
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CoreCompileInputs.cache
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.exe
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.deps.json
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.runtimeconfig.json
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.dll
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.pdb
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\Pastel.dll
+C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\System.Data.SQLite.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\System.Data.SqlClient.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
@@ -55,20 +22,9 @@ C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattl
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.AssemblyReference.cache
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfoInputs.cache
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.AssemblyInfo.cs
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CoreCompileInputs.cache
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.csproj.CopyComplete
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\refint\ConsoleBattleship.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.pdb
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.deps.json
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.runtimeconfig.json
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.dll
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\ConsoleBattleship.pdb
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
-C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ConsoleBattleship.genruntimeconfig.cache
 C:\Users\bbdnet2741\Documents\Console Battleship\console-battleship\ConsoleBattleship\ConsoleBattleship\obj\Debug\net6.0\ref\ConsoleBattleship.dll

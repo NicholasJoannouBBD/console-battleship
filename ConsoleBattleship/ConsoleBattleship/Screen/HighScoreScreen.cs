@@ -10,9 +10,11 @@ namespace ConsoleBattleship.Screen
     internal class HighScoreScreen : BaseScreen
     {
         private static readonly int s_padding = 2;
-        public static readonly List<string> highscoreItems = new(){
-            "Top 10 Highest Scores", "10000", "1000", "100", "10", "1", "10000", "1000", "100", "10", "1"
-    };
+        public static Score thingy = new Score();
+
+        public static readonly List<string> highscoreItems = thingy.displayLeaderboard();/*new(){
+            "Top 10 Highest Scores", "1000000", "1000", "100", "10", "1", "10000", "1000", "100", "10", "1"
+    };*/
 
 
         private readonly int _highscoreItemCount = highscoreItems.Count();
@@ -26,6 +28,11 @@ namespace ConsoleBattleship.Screen
           Console.WindowWidth - (2 * s_padding) - 2,
           Console.WindowHeight - (3 * s_padding) - 4
         );
+
+        /*private void addscores(List<string> scores)
+        {
+
+        }*/
 
         // SINGLETON
         protected HighScoreScreen(int width, int height) : base(width, height)
