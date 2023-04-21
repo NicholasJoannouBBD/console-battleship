@@ -106,7 +106,7 @@ namespace ConsoleBattleship
 
         public void displayLeaderboard()
         {
-            Console.WriteLine(databaseX.getLeaderboard);
+            Console.WriteLine(databaseX.getLeaderboard());
         }
 
     }
